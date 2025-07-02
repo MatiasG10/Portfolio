@@ -1,54 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Pablo Matias Ganne Moreno</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
 </head>
+
 <body>
-  <!-- HEADER (Barra de navegación) -->
-  <header class="header">
-    <h1>header</h1>
+    <!-- HEADER (Barra de navegación) -->
+    <header class="header">
+        <div class="job-status">
+            <p class="point-available">&#8226;</p>
+            <h3>Open to work</h3>
+        </div>
+    </header>
+
+    <div class="button-cv">
+        <button>Download CV</button>
+    </div>
+
     <nav class="navbar">
-      <!-- Logo + Menú -->
+        <div class="navbar-content">
+            <a href="#home" data-section="home"><iconify-icon icon="ph:user"></iconify-icon>Home</a>
+            <a href="#summary" data-section="summary"><iconify-icon icon="ph:briefcase"></iconify-icon>Summary</a>
+            <a href="#experience" data-section="experience"><iconify-icon icon="ph:file-text"></iconify-icon>Experience</a>
+            <a href="#skills" data-section="skills"><iconify-icon icon="ph:star"></iconify-icon>Skills</a>
+            <a href="#links" data-section="links"><iconify-icon icon="line-md:link"></iconify-icon>Links</a>
+        </div>
     </nav>
-  </header>
 
-  <!-- MAIN (Contenido principal) -->
-  <main class="main">
-    <h2>main</h2>
-    <!-- HERO SECTION (Portada) -->
-    <section class="hero-section">
-      <!-- Presentación inicial -->
-       <h3>section hero-section</h3>
-    </section>
+    <!-- MAIN (Contenido principal) -->
+    <main class="main">
+        <!-- HERO SECTION (Portada) -->
 
-    <!-- ABOUT SECTION -->
-    <section class="about-section">
-      <!-- Sobre ti -->
-       <h3>section about-section</h3>
-    </section>
+        <section id="home" class="section home">
+            <!-- Presentación inicial -->
+            <h3>section hero-section</h3>
+        </section>
 
-    <!-- PROJECTS SECTION -->
-    <section class="projects-section">
-      <!-- Tus proyectos -->
-       <h3>section projects-section</h3>
-    </section>
+        <section id="summary" class="section summary">
+            <!-- Presentación inicial -->
+            <h3>section hero-section</h3>
+        </section>
 
-    <!-- CONTACT SECTION -->
-    <section class="contact-section">
-      <!-- Formulario de contacto -->
-       <h3>section contact-section</h3>
-    </section>
-  </main>
+        <!-- ABOUT SECTION -->
+        <section id="experience" class="section work-experience">
+            <!-- Sobre ti -->
+            <h3>section about-section</h3>
+        </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <!-- Redes sociales + copyright -->
-     <h2>footer</h2>
-  </footer>
+        <!-- PROJECTS SECTION -->
+        <section id="skills" class="section skills">
+            <!-- Tus proyectos -->
+            <h3>section projects-section</h3>
+        </section>
 
-  <script src="js/main.js"></script>
+        <!-- CONTACT SECTION -->
+        <section id="links" class="section contact-section">
+            <!-- Formulario de contacto -->
+            <h3>section contact-section</h3>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <!-- Redes sociales + copyright -->
+        <h2>footer</h2>
+    </footer>
+
+    <script>
+    // Selecciona todos los enlaces de la navbar
+    const navLinks = document.querySelectorAll('.navbar-content a');
+    const sections = document.querySelectorAll('main section');
+
+    // Configura IntersectionObserver
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Remueve .active de todos los enlaces
+            navLinks.forEach((link) => link.classList.remove('active'));
+            // Encuentra el enlace correspondiente a la sección visible
+            const activeLink = document.querySelector(`.navbar-content a[data-section="${entry.target.id}"]`);
+            if (activeLink) {
+              activeLink.classList.add('active');
+            }
+          }
+        });
+      },
+      {
+        root: null, // Usa el viewport como raíz
+        threshold: 0.5, // Activa cuando el 50% de la sección es visible
+        rootMargin: '0px' // Margen adicional, ajustable si es necesario
+      }
+    );
+
+    // Observa todas las secciones
+    sections.forEach((section) => observer.observe(section));
+
+    // Resaltar enlace al hacer clic
+    navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.forEach((l) => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
+
 </body>
+
 </html>

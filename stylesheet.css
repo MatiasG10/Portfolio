@@ -1,56 +1,178 @@
 /* Reset y base general */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
-  /* Variables de color (modifica estos valores) */
-  --primary-color: #3498db;
-  --secondary-color: #2ecc71;
-  --dark-color: #2c3e50;
-  --light-color: #ecf0f1;
-  --text-color: #333;
-  --text-light: #fff;
-  
-  /* Variables tipográficas */
-  --font-main: 'Roboto', sans-serif;
-  --font-title: 'Montserrat', sans-serif;
-  
-  /* Espaciado base */
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 2rem;
+    /* Variables de color (modifica estos valores) */
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --text-color: #333;
+    --text-light: #fff;
+
+    --Main-color: #FFB800;
+    --Icon-color: #000000;
+
+
+    /* Variables tipográficas */
+    --font-main: 'Roboto', sans-serif;
+    --font-title: 'Montserrat', sans-serif;
+
+    /* Espaciado base */
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
 }
 
 html {
-  scroll-behavior: smooth; /* Scroll suave */
-  font-size: 16px; /* Base para rem */
-  
-  height: 100%; /* Ocupa el 100% del viewport height */
-  min-height: 100vh; /* Alternativa moderna con vh (viewport height) */
-  margin: 0;
-  padding: 0;
+    scroll-behavior: smooth;
+    /* Scroll suave */
+    font-size: 16px;
+    /* Base para rem */
+
+    height: 100%;
+    /* Ocupa el 100% del viewport height */
+    min-height: 100vh;
+    /* Alternativa moderna con vh (viewport height) */
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: var(--font-main);
-  line-height: 1.6;
-  color: var(--text-color);
-  background-color: grey;
-  overflow-x: hidden; /* Previene scroll horizontal */
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: grey;
+    overflow-x: hidden;
+    /* Previene scroll horizontal */
 }
 
-main{
+
+header {
+    position: absolute;
+    top: 4.6875rem;
+    left: 0rem;
+    z-index: 10;
+    width: 100%;
+    background-color: #000000;
+
+    .job-status {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0rem 0.8rem;
+        font-weight: bold;
+
+        h3 {
+            background-color: var(--success-color);
+            color: rgb(255, 255, 255);
+        }
+
+        .point-available {
+            color: rgb(8, 228, 38);
+            font-size: 2rem;
+        }
+    }
+
+}
+
+.navbar {
+    position: fixed;
+    bottom: 4.6875rem;
+    z-index: 10;
+    border-radius: 1.5rem;
+    width: 100%;
+
+    .navbar-content {
+        margin: 0 auto;
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ffffff29;
+        backdrop-filter: blur(10px);
+        border-radius: 2rem;
+        padding: 0.5rem;
+
+        a{
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-align: center;
+            background-color: transparent;
+            border-radius: 2rem;
+            padding: 0.5rem;
+            height: 48px;
+            width: 160px;
+            display: flex;
+            justify-content: center;
+        }
+
+        a:hover{
+            background-color: var(--text-light);
+            color: var(--text-color);
+        }
+
+        .active{
+            background-color: var(--text-light);
+            color: var(--text-color);
+        }
+    }
+}
+
+.button-cv {
+    position: fixed;
+    top: 4.6875rem;
+    right: 8rem;
+    z-index: 1000;
+
+    button {
+        border-radius: 2rem;
+        border: none;
+        background-color: var(--Main-color);
+        width: 10rem;
+        height: 3rem;
+    }
+}
+
+main {
     height: 100vh;
     background-color: #5e5c5c;
+    position: relative;
+    width: 100%;
+    background: url(./img/Image-primary.jpg) no-repeat center center/cover;
+
+    .section{
+        height: 100vh;
+    }
+
+    .summary, .work-experience, .skills, .contact-section{
+        
+    }
+
+    .summary{
+        background-color: #135aa1;
+    }
+
+    .work-experience{
+        background-color: #333;
+    }
+
+    .skills{
+        background-color: #672b8f;
+    }
+
+    .contact-section{
+        background-color: #333;
+    }
 }
 
-header{
-    background-color: #8f8d8d;
-}
-
-footer{
+footer {
     background-color: #8f8d8d;
 }
