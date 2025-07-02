@@ -29,7 +29,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    /*scroll-behavior: smooth;*/
     /* Scroll suave */
     font-size: 16px;
     /* Base para rem */
@@ -87,9 +87,9 @@ header {
     border-radius: 1.5rem;
     width: 100%;
 
-    .navbar-content {
+    & .navbar-content {
         margin: 0 auto;
-        width: 80%;
+        width: 60%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -98,7 +98,7 @@ header {
         border-radius: 2rem;
         padding: 0.5rem;
 
-        a{
+        & a {
             color: #fff;
             text-decoration: none;
             display: flex;
@@ -109,21 +109,32 @@ header {
             border-radius: 2rem;
             padding: 0.5rem;
             height: 48px;
-            width: 160px;
+            width: 170px;
             display: flex;
             justify-content: center;
+            /*transition: color 0.3s ease;*/
+            /* Suaviza el cambio de color */
         }
 
-        a:hover{
-            background-color: var(--text-light);
+        & .active {
             color: var(--text-color);
+            transition: color 0.3s ease;
         }
 
-        .active{
-            background-color: var(--text-light);
-            color: var(--text-color);
+        & .nav-indicator {
+            position: absolute;
+            left: 0;
+            height: 48px;
+            background-color: white;
+            border-radius: 2rem;
+            /*box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);*/
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+            /* para que no tape los botones */
         }
+
     }
+
 }
 
 .button-cv {
@@ -148,27 +159,28 @@ main {
     width: 100%;
     background: url(./img/Image-primary.jpg) no-repeat center center/cover;
 
-    .section{
+    .section {
         height: 100vh;
     }
 
-    .summary, .work-experience, .skills, .contact-section{
-        
-    }
+    .summary,
+    .work-experience,
+    .skills,
+    .contact-section {}
 
-    .summary{
+    .summary {
         background-color: #135aa1;
     }
 
-    .work-experience{
+    .work-experience {
         background-color: #333;
     }
 
-    .skills{
+    .skills {
         background-color: #672b8f;
     }
 
-    .contact-section{
+    .contact-section {
         background-color: #333;
     }
 }
