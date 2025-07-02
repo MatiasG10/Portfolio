@@ -1,0 +1,56 @@
+/* Reset y base general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Variables de color (modifica estos valores) */
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --dark-color: #2c3e50;
+  --light-color: #ecf0f1;
+  --text-color: #333;
+  --text-light: #fff;
+  
+  /* Variables tipográficas */
+  --font-main: 'Roboto', sans-serif;
+  --font-title: 'Montserrat', sans-serif;
+  
+  /* Espaciado base */
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+}
+
+html {
+  scroll-behavior: smooth; /* Scroll suave */
+  font-size: 16px; /* Base para rem */
+  
+  height: 100%; /* Ocupa el 100% del viewport height */
+  min-height: 100vh; /* Alternativa moderna con vh (viewport height) */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: grey;
+  overflow-x: hidden; /* Previene scroll horizontal */
+}
+
+main{
+    height: 100vh;
+    background-color: #5e5c5c;
+}
+
+header{
+    background-color: #8f8d8d;
+}
+
+footer{
+    background-color: #8f8d8d;
+}
