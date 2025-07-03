@@ -51,7 +51,6 @@ body {
     /* Previene scroll horizontal */
 }
 
-
 header {
     position: absolute;
     top: 4.6875rem;
@@ -64,6 +63,10 @@ header {
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        position: absolute;
+        top: 0rem;
+        left: 6rem;
+        z-index: 10;
         padding: 0rem 0.8rem;
         font-weight: bold;
 
@@ -75,10 +78,29 @@ header {
         .point-available {
             color: rgb(8, 228, 38);
             font-size: 2rem;
-        }
+            animation: pulse 1.5s infinite ease-in-out;
+            /* Nombre, duración, repetición, suavizado */
+            display: inline-block;
+        } 
     }
-
 }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.7; 
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
 
 .navbar {
     position: fixed;
@@ -97,6 +119,8 @@ header {
         backdrop-filter: blur(10px);
         border-radius: 2rem;
         padding: 0.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
 
         & a {
             color: #fff;
@@ -136,6 +160,77 @@ header {
     }
 
 }
+
+@media (min-width: 300px) {
+    .navbar {
+        flex-direction: row;
+
+        /* Desktop: menú horizontal */
+        & .navbar-content {
+            width: 95%;
+
+            & a {
+                height: 32px;
+                width: fit-content;
+
+                & p {
+                    display: none;
+                }
+            }
+
+            & .nav-indicator {
+                height: 32px;
+            }
+        }
+    }
+}
+
+@media (min-width: 550px) {
+    .navbar {
+        flex-direction: row;
+
+        /* Desktop: menú horizontal */
+        & .navbar-content {
+            width: 90%;
+
+            & a {
+                & p {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        flex-direction: row;
+
+        /* Desktop: menú horizontal */
+        & .navbar-content {
+            width: 85%;
+
+            & a {
+                height: 48px;
+                width: 170px;
+
+                & p {
+                    display: block;
+                }
+            }
+
+            & .nav-indicator {
+                height: 48px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .navbar {}
+}
+
+
 
 .button-cv {
     position: fixed;
