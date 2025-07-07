@@ -46,7 +46,7 @@ body {
     font-family: var(--font-main);
     line-height: 1.6;
     color: var(--text-color);
-    background-color: grey;
+    background-color: var(--Icon-color);
     overflow-x: hidden;
     /* Previene scroll horizontal */
 }
@@ -293,14 +293,14 @@ header {
 }
 
 main {
-    height: 100vh;
-    background-color: #5e5c5c;
+    /* height: 100vh; */
     position: relative;
-    width: 100%;
+    /* width: 100%; */
     background: url(./img/Image-primary.jpg) no-repeat center center/cover;
+    background-attachment: fixed;
 
     .section {
-        height: 100vh;
+        /* height: 100vh; */
     }
 
     .home {
@@ -308,6 +308,7 @@ main {
         flex-direction: column;
         justify-content: flex-end;
         padding-bottom: clamp(3rem, 30vh, 15rem);
+        height: 100vh;
         /* 
        - Nunca menos de 3rem (en móviles)
        - Ideal: 30% del alto de la pantalla (30vh)
@@ -470,8 +471,63 @@ main {
     }
 
 
-    .summary {
-        background-color: #135aa1;
+
+
+    @media (min-width:320px) {
+        .summary {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            backdrop-filter: blur(10px);
+
+            h2 {
+                color: var(--Main-color);
+                font-size: 2rem;
+            }
+
+            .experience-text {
+                small {
+                    color: var(--light-color);
+                }
+            }
+
+            .main-text {
+                padding-left: 1rem;
+                border-left: 3px solid var(--Main-color);
+
+                h3 {
+                    color: var(--text-light);
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+
+    @media (min-width:768px) {
+        .summary {
+            padding: 4rem;
+
+            .main-text {
+                padding-left: 1.5rem;
+            }
+        }
+    }
+
+    @media (min-width:900px) {
+        .summary {
+            display: grid;
+            grid-template-columns: 1fr;
+            /* El contenido interno ocupa 1fr */
+            justify-content: start;
+            /* Alinea el contenido a la izquierda */
+        }
+
+        .experience-text,
+        .main-text {
+            max-width: 600px;
+        }
     }
 
     .work-experience {
@@ -488,5 +544,6 @@ main {
 }
 
 footer {
+    display: none;
     background-color: #8f8d8d;
 }
