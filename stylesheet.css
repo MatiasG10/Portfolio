@@ -536,7 +536,6 @@ main {
         .work-experience {
             padding: 4rem 0 2rem 0;
             backdrop-filter: blur(10px);
-            /* background-color: var(--Icon-color); */
 
             h2 {
                 padding: 0 1rem;
@@ -657,7 +656,7 @@ main {
     }
 
     @media (min-width:768px) {
-         .work-experience {
+        .work-experience {
             padding: 4rem;
         }
     }
@@ -677,9 +676,96 @@ main {
     }
 
 
-    .skills {
-        background-color: #672b8f;
+
+    /*skills*/
+
+    @media (min-width:320px) {
+        .skills {
+            padding: 2rem 0;
+            backdrop-filter: blur(10px);
+
+            h2 {
+                padding: 0 1rem;
+                color: var(--Main-color);
+                font-size: 2rem;
+            }
+
+            .skill-category {
+                .skill-list {
+                    list-style: none;
+
+                    .skill-item {
+                        padding-left: 20px;
+                        color: var(--text-light);
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+
+                    .skill-item::before {
+                        content: "•";
+                        color: var(--Main-color);
+                        font-size: 1.5rem;
+                        margin-right: 8px;
+                    }
+                }
+            }
+
+            .tools-grid {
+                padding: 4rem 2rem;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+                gap: 20px;
+
+                .tool-item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 8px;
+
+                    img {
+                        width: 60px;
+                        height: 60px;
+                        object-fit: contain;
+                        transition: transform 0.3s;
+                    }
+
+                    img:hover {
+                        transform: scale(1.1);
+                        /* Efecto hover */
+                    }
+
+                    span {
+                        font-size: 0.975rem;
+                        font-weight: 500;
+                        text-align: center;
+                        color: var(--text-light);
+                    }
+
+                }
+            }
+
+        }
     }
+
+    @media (min-width:768px) {
+        .skills {
+            padding: 4rem;
+        }
+    }
+
+    @media (min-width:900px) {
+        .skills {
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-content: start;
+        }
+
+        .skill-category, .tools-grid {
+            max-width: 600px;
+        }
+    }
+
+
 
     .contact-section {
         background-color: #333;
