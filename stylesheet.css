@@ -675,72 +675,170 @@ main {
     }
 
 
-    /*skills*/
+    /*Skills*/
     @media (min-width:320px) {
         .skills {
-            padding: 2rem 0;
+            padding: 2rem 1rem;
             backdrop-filter: blur(10px);
 
             h2 {
-                padding: 0 1rem;
                 color: var(--Main-color);
                 font-size: 2rem;
             }
 
-            .skill-category {
-                .skill-list {
-                    list-style: none;
+            /* === Styles for Skills === */
+            .skill-tools {
+                .skill-category {
+                    .skill-list {
+                        list-style: none;
 
-                    .skill-item {
-                        padding-left: 20px;
-                        color: var(--text-light);
-                        font-size: 20px;
-                        font-weight: 600;
-                    }
+                        .skill-item {
+                            padding-left: 8px;
+                            color: var(--text-light);
+                            font-size: 20px;
+                            font-weight: 600;
+                        }
 
-                    .skill-item::before {
-                        content: "•";
-                        color: var(--Main-color);
-                        font-size: 1.5rem;
-                        margin-right: 8px;
+                        .skill-item::before {
+                            content: "•";
+                            color: var(--Main-color);
+                            font-size: 1.5rem;
+                            margin-right: 8px;
+                        }
                     }
                 }
+
+                .tools-grid {
+                    padding: 4rem 1rem;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+                    gap: 20px;
+
+                    .tool-item {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 8px;
+
+                        img {
+                            width: 60px;
+                            height: 60px;
+                            object-fit: contain;
+                            transition: transform 0.3s;
+                        }
+
+                        img:hover {
+                            transform: scale(1.1);
+                            /* Efecto hover */
+                        }
+
+                        span {
+                            font-size: 0.975rem;
+                            font-weight: 500;
+                            text-align: center;
+                            color: var(--text-light);
+                        }
+
+                    }
+                }
+
             }
 
-            .tools-grid {
-                padding: 4rem 2rem;
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-                gap: 20px;
-
-                .tool-item {
+            /* === Styles for Languages === */
+            .languages {
+                .language-item {
                     display: flex;
-                    flex-direction: column;
                     align-items: center;
-                    gap: 8px;
+                    margin-bottom: 1rem;
 
-                    img {
-                        width: 60px;
-                        height: 60px;
-                        object-fit: contain;
-                        transition: transform 0.3s;
-                    }
-
-                    img:hover {
-                        transform: scale(1.1);
-                        /* Efecto hover */
-                    }
-
-                    span {
-                        font-size: 0.975rem;
-                        font-weight: 500;
-                        text-align: center;
+                    .language-name {
                         color: var(--text-light);
+                        font-size: 1.25rem;
+                        font-weight: 600;
+                        display: inline-block;
+                        width: 140px;
                     }
 
+                    .language-progress {
+                        width: 60%;
+                        /* Ancho de la barra */
+                        height: 8px;
+                        margin-left: 1rem;
+                        border-radius: 4px;
+                        border: none;
+                        background-color: rgba(255, 255, 255, 0.2);
+                    }
+
+                    /* Estilos para navegadores WebKit (Chrome, Safari) */
+                    .language-progress::-webkit-progress-bar {
+                        background-color: rgba(255, 255, 255, 0.2);
+                        border-radius: 4px;
+                    }
+
+                    .language-progress::-webkit-progress-value {
+                        background-color: var(--Main-color);
+                        border-radius: 4px;
+                    }
+
+                    /* Estilos para Firefox */
+                    .language-progress::-moz-progress-bar {
+                        background-color: var(--Main-color);
+                        border-radius: 4px;
+                    }
                 }
             }
 
+            /* === Styles for Education/Certifications === */
+            .education {
+                .timeline-container {
+                    position: relative;
+                    padding-left: 36px;
+                    margin-top: 2rem;
+
+                    .timeline-line {
+                        position: absolute;
+                        left: 26px;
+                        top: 0;
+                        bottom: 0;
+                        width: 2px;
+                        background: linear-gradient(to bottom,
+                                var(--Main-color) 0%,
+                                rgba(255, 184, 0, 0.3) 100%);
+                    }
+
+                    .education-item {
+                        position: relative;
+                        margin-bottom: 2rem;
+                        display: flex;
+                        align-items: flex-start;
+
+                        .education-dot {
+                            width: 12px;
+                            height: 12px;
+                            border-radius: 50%;
+                            background-color: var(--Main-color);
+                            position: absolute;
+                            left: -30px;
+                            top: 8px;
+                        }
+
+                        .education-content {
+
+                            h3 {
+                                color: var(--Main-color);
+                                font-size: 1.1rem;
+                                margin-bottom: 0.25rem;
+                            }
+
+                            .education-meta {
+                                color: var(--text-light);
+                                font-size: 0.875rem;
+                                opacity: 0.8;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -758,131 +856,11 @@ main {
         }
 
         .skill-category,
-        .tools-grid {
-            max-width: 600px;
-        }
-    }
-
-
-    /* === Estilos para Idiomas === */
-    @media (min-width:320px) {
-        .languages {
-            min-height: unset;
-            padding: 2rem 1rem;
-            backdrop-filter: blur(10px);
-
-            h2 {
-                color: var(--Main-color);
-                font-size: 2rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .language-item {
-                display: flex;
-                align-items: center;
-                margin-bottom: 1rem;
-                .language-name {
-                    color: var(--text-light);
-                    font-size: 1.25rem;
-                    font-weight: 600;
-                    display: inline-block;
-                    width: 140px;
-                }
-
-                .language-progress {
-                    width: 60%;
-                    /* Ancho de la barra */
-                    height: 8px;
-                    margin-left: 1rem;
-                    border-radius: 4px;
-                    border: none;
-                    background-color: rgba(255, 255, 255, 0.2);
-                }
-
-                /* Estilos para navegadores WebKit (Chrome, Safari) */
-                .language-progress::-webkit-progress-bar {
-                    background-color: rgba(255, 255, 255, 0.2);
-                    border-radius: 4px;
-                }
-
-                .language-progress::-webkit-progress-value {
-                    background-color: var(--Main-color);
-                    border-radius: 4px;
-                }
-
-                /* Estilos para Firefox */
-                .language-progress::-moz-progress-bar {
-                    background-color: var(--Main-color);
-                    border-radius: 4px;
-                }
-            }
-        }
-    }
-
-    @media (min-width:768px) {
-        .languages {
-            padding: 4rem;
-        }
-    }
-
-    @media (min-width:900px) {
+        .tools-grid,
         .language-item {
             max-width: 600px;
         }
     }
-
-
-    /* === Estilos para Educación/Certificaciones === */
-    .timeline-container {
-        position: relative;
-        padding-left: 24px;
-        margin-top: 2rem;
-    }
-
-    .timeline-line {
-        position: absolute;
-        left: 11px;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: linear-gradient(to bottom,
-                var(--Main-color) 0%,
-                rgba(255, 184, 0, 0.3) 100%);
-    }
-
-    .education-item {
-        position: relative;
-        margin-bottom: 2rem;
-        display: flex;
-        align-items: flex-start;
-    }
-
-    .education-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: var(--Main-color);
-        position: absolute;
-        left: -30px;
-        top: 6px;
-    }
-
-    .education-content {
-        margin-left: 1rem;
-    }
-
-    .education-content h3 {
-        color: var(--Main-color);
-        font-size: 1.1rem;
-        margin-bottom: 0.25rem;
-    }
-
-    .education-meta {
-        color: var(--text-light);
-        font-size: 0.875rem;
-        opacity: 0.8;
-    }
-
 
     .contact-section {
         background-color: #333;
