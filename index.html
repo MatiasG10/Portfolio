@@ -365,31 +365,31 @@
             <div class="social-links">
                 <a href="#" target="_blank" class="social-icon">
                     <img src="https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png&color=000000" width="40"
-                            alt="linkedin">
+                        alt="linkedin">
                 </a>
                 <a href="#" target="_blank" class="social-icon">
                     <img src="https://img.icons8.com/?size=100&id=LoL4bFzqmAa0&format=png&color=000000" width="40"
-                            alt="Github">
+                        alt="Github">
                 </a>
                 <a href="#" target="_blank" class="social-icon">
                     <img src="https://img.icons8.com/?size=100&id=qyRpAggnV0zH&format=png&color=000000" width="40"
-                            alt="Gmail">
+                        alt="Gmail">
                 </a>
                 <a href="#" target="_blank" class="social-icon">
                     <img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000" width="40"
-                            alt="Instagram">
+                        alt="Instagram">
                 </a>
                 <a href="#" target="_blank" class="social-icon">
                     <img src="https://img.icons8.com/?size=100&id=LoL4bFzqmAa0&format=png&color=000000" width="40"
-                            alt="Github">
+                        alt="Github">
                 </a>
                 <a href="#" target="_blank" class="social-icon">
                     <img src="https://img.icons8.com/?size=100&id=qyRpAggnV0zH&format=png&color=000000" width="40"
-                            alt="Gmail">
+                        alt="Gmail">
                 </a>
                 <a href="#" target="_blank" class="social-icon">
                     <img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000" width="40"
-                            alt="Instagram">
+                        alt="Instagram">
                 </a>
             </div>
 
@@ -463,6 +463,30 @@
         });
 
 
+    </script>
+
+    <!-- funcionalidad para blur con scroll-->
+    <script>
+        const mainAfter = document.createElement('style');
+        document.head.appendChild(mainAfter);
+
+        window.addEventListener('scroll', () => {
+            const homeSection = document.getElementById('home');
+            const homeBottom = homeSection.offsetTop + homeSection.offsetHeight;
+            const scrollY = window.scrollY;
+
+            let blurAmount = 0;
+
+            if (scrollY > homeBottom - window.innerHeight / 2) {
+                blurAmount = Math.min((scrollY - homeBottom + window.innerHeight / 2) / 100, 8);
+            }
+
+            mainAfter.innerHTML = `
+            main::after {
+                backdrop-filter: blur(${blurAmount}px);
+            }
+        `;
+        });
     </script>
 
 </body>

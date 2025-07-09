@@ -301,6 +301,8 @@ main {
         min-height: 100vh;
         padding-top: 60px;
         box-sizing: border-box;
+        position: relative;
+        z-index: 2;
     }
 
     .home {
@@ -926,22 +928,35 @@ main {
         }
     }
 
-    @media (min-width:768px){
-        .contact-section{
+    @media (min-width:768px) {
+        .contact-section {
             padding: 4rem;
             gap: 6rem;
         }
     }
 
-    @media (min-width:900px){
-        .contact-section{
-            .contact-info{
+    @media (min-width:900px) {
+        .contact-section {
+            .contact-info {
                 flex-direction: row;
                 gap: 2rem;
             }
         }
     }
 
+}
+
+main::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.3s ease;
+    z-index: 1;
 }
 
 footer {
