@@ -765,7 +765,72 @@ main {
 
 
     /* === Estilos para Idiomas === */
-    
+    @media (min-width:320px) {
+        .languages {
+            min-height: unset;
+            padding: 2rem 1rem;
+            backdrop-filter: blur(10px);
+
+            h2 {
+                color: var(--Main-color);
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .language-item {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1rem;
+                .language-name {
+                    color: var(--text-light);
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                    display: inline-block;
+                    width: 140px;
+                }
+
+                .language-progress {
+                    width: 60%;
+                    /* Ancho de la barra */
+                    height: 8px;
+                    margin-left: 1rem;
+                    border-radius: 4px;
+                    border: none;
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+
+                /* Estilos para navegadores WebKit (Chrome, Safari) */
+                .language-progress::-webkit-progress-bar {
+                    background-color: rgba(255, 255, 255, 0.2);
+                    border-radius: 4px;
+                }
+
+                .language-progress::-webkit-progress-value {
+                    background-color: var(--Main-color);
+                    border-radius: 4px;
+                }
+
+                /* Estilos para Firefox */
+                .language-progress::-moz-progress-bar {
+                    background-color: var(--Main-color);
+                    border-radius: 4px;
+                }
+            }
+        }
+    }
+
+    @media (min-width:768px) {
+        .languages {
+            padding: 4rem;
+        }
+    }
+
+    @media (min-width:900px) {
+        .language-item {
+            max-width: 600px;
+        }
+    }
+
 
     /* === Estilos para Educación/Certificaciones === */
     .timeline-container {
