@@ -746,6 +746,7 @@ main {
 
             /* === Styles for Languages === */
             .languages {
+                padding: 2rem 0rem;
                 .language-item {
                     display: flex;
                     align-items: center;
@@ -793,7 +794,7 @@ main {
                 .timeline-container {
                     position: relative;
                     padding-left: 36px;
-                    margin-top: 2rem;
+                    margin-top: 1rem;
 
                     .timeline-line {
                         position: absolute;
@@ -825,13 +826,13 @@ main {
                         .education-content {
 
                             h3 {
-                                color: var(--Main-color);
+                                color: var(--text-light);
                                 font-size: 1.1rem;
                                 margin-bottom: 0.25rem;
                             }
 
                             .education-meta {
-                                color: var(--text-light);
+                                color: var(--Main-color);
                                 font-size: 0.875rem;
                                 opacity: 0.8;
                             }
