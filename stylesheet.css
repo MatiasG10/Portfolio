@@ -479,7 +479,6 @@ main {
             display: flex;
             flex-direction: column;
             gap: 2rem;
-            backdrop-filter: blur(10px);
 
             h2 {
                 color: var(--Main-color);
@@ -534,7 +533,6 @@ main {
     @media (min-width:320px) {
         .work-experience {
             padding: 4rem 0 2rem 0;
-            backdrop-filter: blur(10px);
 
             h2 {
                 padding: 0 1rem;
@@ -679,7 +677,6 @@ main {
     @media (min-width:320px) {
         .skills {
             padding: 2rem 1rem;
-            backdrop-filter: blur(10px);
 
             h2 {
                 color: var(--Main-color);
@@ -868,7 +865,6 @@ main {
     @media (min-width:320px) {
         .contact-section {
             padding: 2rem 1rem;
-            backdrop-filter: blur(10px);
             display: flex;
             flex-direction: column;
             /* justify-content: center; */
