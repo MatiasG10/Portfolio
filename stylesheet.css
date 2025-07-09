@@ -293,14 +293,14 @@ header {
 }
 
 main {
-    /* height: 100vh; */
     position: relative;
-    /* width: 100%; */
     background: url(./img/Image-primary.jpg) no-repeat center center/cover;
     background-attachment: fixed;
 
     .section {
-        /* height: 100vh; */
+        min-height: 100vh;
+        padding-top: 60px;
+        box-sizing: border-box;
     }
 
     .home {
@@ -530,7 +530,6 @@ main {
     }
 
 
-
     /*work experience*/
     @media (min-width:320px) {
         .work-experience {
@@ -676,9 +675,7 @@ main {
     }
 
 
-
     /*skills*/
-
     @media (min-width:320px) {
         .skills {
             padding: 2rem 0;
@@ -760,7 +757,8 @@ main {
             justify-content: start;
         }
 
-        .skill-category, .tools-grid {
+        .skill-category,
+        .tools-grid {
             max-width: 600px;
         }
     }
