@@ -315,7 +315,7 @@ main {
        - Nunca menos de 3rem (en móviles)
        - Ideal: 30% del alto de la pantalla (30vh)
        - Nunca más de 15rem (en pantallas grandes)
-        */
+        */ 
 
         .initial-presentation {
             max-width: 1400px;
@@ -488,8 +488,10 @@ main {
             }
 
             .experience-text {
-                small {
+                p {
                     color: var(--light-color);
+                    font-size: 0.75rem;
+                    margin-bottom: 0.5rem;
                 }
             }
 
