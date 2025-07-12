@@ -1092,6 +1092,32 @@ main::after {
     z-index: 1;
 }
 
+/*animacion de aparicion con scroll*/
+/*en uso*/
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*prueba*/
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s ease-out;
+}
+
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
 footer {
     display: none;
     background-color: #8f8d8d;

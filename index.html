@@ -81,8 +81,8 @@
         <section id="summary" class="section summary">
             <!-- Presentación inicial -->
 
-            <h2>Summary</h2>
-            <div class="experience-text">
+            <h2 class="fade-in">Summary</h2>
+            <div class="experience-text fade-in">
                 <p class="exp">Soy Técnico Electromecánico, que decidió dirigir su carrera hacia otro mundo que le
                     apasiona que es la tecnología. Comencé este camino estudiando Ingeniería en Informática, por
                     cuestión de tiempo opté por una formación más enfocada a convertirme en un profesional del
@@ -115,7 +115,7 @@
                 </p>
             </div>
 
-            <div class="main-text">
+            <div class="main-text fade-in-left">
                 <h3>
                     Me gusta aprender haciendo. Cuando veo algo que me resulta interesante, disfruto intentar
                     replicarlo, ya sea una animación, un diseño, una edición, una funcionalidad. Esa curiosidad me
@@ -135,13 +135,13 @@
         <section id="experience" class="section work-experience">
 
             <!--botonos del tabs en experiencia-->
-            <div class="tabs">
+            <div class="tabs fade-in">
                 <button class="tab-button active" data-tab="work">Experiencia Laboral</button>
                 <button class="tab-button" data-tab="extra">Proyectos Extra</button>
             </div>
 
             <!--contenedor principal de experiencias-->
-            <div class="timeline-container">
+            <div class="timeline-container fade-in-left">
 
                 <!-- Línea vertical -->
                 <div class="timeline-line"></div>
@@ -210,7 +210,8 @@
                                 <h4>Key Responsibilities:</h4>
                                 <ul>
                                     <li>Desarrollo y mantenimiento de proyectos internos y externos (stack MERN). </li>
-                                    <li>Coordinación con clientes, definición de funcionalidades, liderazgo de tareas.</li>
+                                    <li>Coordinación con clientes, definición de funcionalidades, liderazgo de tareas.
+                                    </li>
                                     <li>Uso de Trello y Jira básico para gestión de proyectos.</li>
                                     <li>Documentación técnica y pruebas de funcionalidades.</li>
                                 </ul>
@@ -595,8 +596,8 @@
         <!-- SKILLS SECTION -->
         <section id="skills" class="section skills">
 
-            <div class="skill-tools">
-                <h2>Skills & Tools</h2>
+            <div class="skill-tools fade-in-left">
+                <h2 >Skills & Tools</h2>
 
                 <!-- category -->
                 <div class="skill-category">
@@ -658,7 +659,7 @@
             </div>
 
             <!-- LANGUAGES SECTION -->
-            <div class="languages">
+            <div class="languages fade-in-left">
                 <h2>Idiomas</h2>
 
                 <div class="language-item">
@@ -673,7 +674,7 @@
             </div>
 
             <!-- EDUCATION SECTION -->
-            <div class="education">
+            <div class="education fade-in-left">
                 <h2>Educación & Certificaciones</h2>
 
                 <div class="timeline-container">
@@ -703,10 +704,10 @@
 
         <!-- CONTACT SECTION -->
         <section id="links" class="section contact-section">
-            <h2>Links</h2>
+            <h2 class="fade-in">Links</h2>
 
             <!-- Redes Sociales (Iconos) -->
-            <div class="social-links">
+            <div class="social-links fade-in">
                 <a href="#" target="_blank" class="social-icon">
                     <img src="https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png&color=000000" width="40"
                         alt="linkedin">
@@ -738,7 +739,7 @@
             </div>
 
             <!-- Información de Contacto (como en tu Home) -->
-            <div class="contact-info">
+            <div class="contact-info fade-in">
                 <div class="phone contact-information">
                     <iconify-icon icon="lucide:phone"></iconify-icon>
                     <p>+54 9 3834336680</p>
@@ -750,7 +751,7 @@
             </div>
 
             <!-- Copyright -->
-            <div class="copyright">
+            <div class="copyright fade-in">
                 <p>© 2024 <strong>Pablo Matías Ganne Moreno</strong> - Diseñado y desarrollado por mí.</p>
             </div>
         </section>
@@ -850,6 +851,25 @@
                 });
             });
         });
+    </script>
+
+    <!-- animacion suave para secciones-->
+    <script>
+        const fadeInElements = document.querySelectorAll('[class*="fade-in"]');
+
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        fadeInElements.forEach(el => fadeObserver.observe(el));
     </script>
 </body>
 
