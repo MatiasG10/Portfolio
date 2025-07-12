@@ -315,7 +315,7 @@ main {
        - Nunca menos de 3rem (en móviles)
        - Ideal: 30% del alto de la pantalla (30vh)
        - Nunca más de 15rem (en pantallas grandes)
-        */ 
+        */
 
         .initial-presentation {
             max-width: 1400px;
@@ -538,10 +538,41 @@ main {
         .work-experience {
             padding: 4rem 0 2rem 0;
 
-            h2 {
+            /* h2 {
                 padding: 0 1rem;
                 color: var(--Main-color);
                 font-size: 2rem;
+            } */
+
+            .tabs {
+                display: flex;
+                gap: 1rem;
+                margin: 2rem 0;
+                color: var(--Main-color);
+
+                .tab-button {
+                    padding: 0.75rem 2rem;
+                    border: none;
+                    border-radius: 2rem;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    color: var(--text-light);
+                    cursor: pointer;
+                    font-weight: bold;
+                    transition: background-color 0.3s;
+                }
+
+                .tab-button.active {
+                    background-color: var(--Main-color);
+                    color: #000;
+                }
+            }
+
+            .tab-content {
+                display: none;
+            }
+
+            .tab-content.active {
+                display: block;
             }
 
             .timeline-container {
@@ -642,6 +673,7 @@ main {
                                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
                                 transition: transform 0.3s ease;
                                 text-decoration: none;
+
                                 &:hover {
                                     transform: translateY(-5px);
                                 }

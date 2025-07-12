@@ -7,6 +7,7 @@
     <title>Portfolio - Pablo Matias Ganne Moreno</title>
     <link rel="stylesheet" href="stylesheet.css">
     <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+
 </head>
 
 <body>
@@ -132,316 +133,390 @@
 
         <!-- Experience -->
         <section id="experience" class="section work-experience">
-            <h2>Work Experience</h2>
-            <!-- Primer puesto - Artículo 1 -->
+
+            <!--botonos del tabs en experiencia-->
+            <div class="tabs">
+                <button class="tab-button active" data-tab="work">Experiencia Laboral</button>
+                <button class="tab-button" data-tab="extra">Proyectos Extra</button>
+            </div>
+
+            <!--contenedor principal de experiencias-->
             <div class="timeline-container">
 
                 <!-- Línea vertical -->
                 <div class="timeline-line"></div>
 
-                <article class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-title-date">
-                            <h3>Desarrollador Front-End Aptugo</h3>
-                            <p><time datetime="2025">2024</time> - <time datetime="present">Present</time></p>
-                        </div>
-                        <div class="experience-company">
-                            <p>Aptugo Agency</p>
-                        </div>
-                    </div>
+                <!-- contenido de experiencia de trabajo-->
+                <div class="tab-content active" id="tab-work">
 
-                    <div class="experience-content">
-                        <p class="experience-description">
-                            En Aptugo desempeño el rol de desarrollador Front-End, enfocándome en la maquetación y
-                            aplicación de estilos utilizando la herramienta propia de la empresa. Trabajo en distintos
-                            proyectos, aplicando los diseños solicitados por los clientes, manteniéndome fiel a sus
-                            lineamientos pero también proponiendo pequeñas mejoras cuando lo considero necesario.
-                            Desarrollo sitios responsivos, investigo y creo componentes personalizados dentro de la
-                            herramienta, y colaboro de forma constante con mis compañeros.
-                        </p>
+                    <!-- Artículo 1 -->
+                    <article class="experience-item">
 
-                        <div class="projects-links">
-                            <h4>Selected Projects</h4>
-                            <div class="project-gallery">
-                                <!-- Proyecto 1 -->
-                                <a href="https://www.google.com/" class="project-card">
-                                    <div class="project-image" style="background-image: url('/img/Image-primary.jpg');">
-                                        <div class="project-content">
-                                            <h3 class="project-title">3impacto</h3>
-                                            <p class="project-description">Breve descripción del proyecto</p>
-                                        </div>
-                                        <div class="project-link">
-                                            <iconify-icon icon="material-symbols:arrow-outward"></iconify-icon>
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <!-- Proyecto 2 -->
-                                <a href="https://www.google.com/" class="project-card">
-                                    <div class="project-image" style="background-image: url('/img/Image-primary.jpg');">
-                                        <div class="project-content">
-                                            <h3 class="project-title">match4room</h3>
-                                            <p class="project-description">Breve descripción del proyecto</p>
-                                        </div>
-                                        <div class="project-link">
-                                            <iconify-icon icon="material-symbols:arrow-outward"></iconify-icon>
-                                        </div>
-                                    </div>
-                                </a>
+                        <div class="experience-header">
+                            <div class="experience-title-date">
+                                <h3>Desarrollador Front-End Aptugo</h3>
+                                <p><time datetime="2025">2024</time> - <time datetime="present">Present</time></p>
+                            </div>
+                            <div class="experience-company">
+                                <p>Aptugo Agency</p>
                             </div>
                         </div>
 
-                        <div class="experience-tasks">
-                            <h4>Key Responsibilities:</h4>
-                            <ul>
-                                <li>Conducted user research and usability testing to drive design decisions</li>
-                                <li>Created wireframes, prototypes, and high-fidelity visual designs</li>
-                                <li>Developed and maintained design systems for consistent branding</li>
-                                <li>Worked cross-functionally to ensure seamless implementation of designs</li>
-                                <li>Led the design of responsive interfaces for all device sizes</li>
-                                <li>Managed a small team of junior designers</li>
-                                <li>Presented design concepts to clients and stakeholders</li>
-                                <li>Stayed updated on industry trends and technologies</li>
-                            </ul>
+                        <div class="experience-content">
+                            <p class="experience-description">
+                                En Aptugo desempeño el rol de desarrollador Front-End, enfocándome en la maquetación y
+                                aplicación de estilos utilizando la herramienta propia de la empresa. Trabajo en
+                                distintos
+                                proyectos, aplicando los diseños solicitados por los clientes, manteniéndome fiel a sus
+                                lineamientos pero también proponiendo pequeñas mejoras cuando lo considero necesario.
+                                Desarrollo sitios responsivos, investigo y creo componentes personalizados dentro de la
+                                herramienta, y colaboro de forma constante con mis compañeros.
+                            </p>
+
+                            <div class="projects-links">
+                                <h4>Selected Projects</h4>
+                                <div class="project-gallery">
+                                    <!-- Proyecto 1 -->
+                                    <a href="https://www.google.com/" class="project-card">
+                                        <div class="project-image"
+                                            style="background-image: url('/img/Image-primary.jpg');">
+                                            <div class="project-content">
+                                                <h3 class="project-title">3impacto</h3>
+                                                <p class="project-description">Breve descripción del proyecto</p>
+                                            </div>
+                                            <div class="project-link">
+                                                <iconify-icon icon="material-symbols:arrow-outward"></iconify-icon>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- Proyecto 2 -->
+                                    <a href="https://www.google.com/" class="project-card">
+                                        <div class="project-image"
+                                            style="background-image: url('/img/Image-primary.jpg');">
+                                            <div class="project-content">
+                                                <h3 class="project-title">match4room</h3>
+                                                <p class="project-description">Breve descripción del proyecto</p>
+                                            </div>
+                                            <div class="project-link">
+                                                <iconify-icon icon="material-symbols:arrow-outward"></iconify-icon>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="experience-tasks">
+                                <h4>Key Responsibilities:</h4>
+                                <ul>
+                                    <li>Conducted user research and usability testing to drive design decisions</li>
+                                    <li>Created wireframes, prototypes, and high-fidelity visual designs</li>
+                                    <li>Developed and maintained design systems for consistent branding</li>
+                                    <li>Worked cross-functionally to ensure seamless implementation of designs</li>
+                                    <li>Led the design of responsive interfaces for all device sizes</li>
+                                    <li>Managed a small team of junior designers</li>
+                                    <li>Presented design concepts to clients and stakeholders</li>
+                                    <li>Stayed updated on industry trends and technologies</li>
+                                </ul>
+                            </div>
+
                         </div>
 
-                    </div>
-                </article>
+                    </article>
 
-                <!-- Primer puesto - Artículo 2 -->
-                <article class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-title-date">
-                            <h3>Desarrollador Front-End Aptugo</h3>
-                            <p><time datetime="2025">2023</time> - <time datetime="present">2024</time></p>
-                        </div>
-                        <div class="experience-company">
-                            <p>Aptugo Agency</p>
-                        </div>
-                    </div>
-
-                    <div class="experience-content">
-                        <p class="experience-description">
-                            En Aptugo desempeño el rol de desarrollador Front-End, enfocándome en la maquetación y
-                            aplicación de estilos utilizando la herramienta propia de la empresa. Trabajo en distintos
-                            proyectos, aplicando los diseños solicitados por los clientes, manteniéndome fiel a sus
-                            lineamientos pero también proponiendo pequeñas mejoras cuando lo considero necesario.
-                            Desarrollo sitios responsivos, investigo y creo componentes personalizados dentro de la
-                            herramienta, y colaboro de forma constante con mis compañeros.
-                        </p>
-
-                        <div class="projects-links">
-                            <h4>Selected Projects</h4>
-                            <div class="project-gallery">
-                                <!-- Proyecto 1 -->
-                                <a href="https://www.google.com/" class="project-card">
-                                    <div class="project-image" style="background-image: url('/img/Image-primary.jpg');">
-                                        <div class="project-content">
-                                            <h3 class="project-title">Tasktugo</h3>
-                                            <p class="project-description">Breve descripción del proyecto</p>
-                                        </div>
-                                        <div class="project-link">
-                                            <iconify-icon icon="material-symbols:arrow-outward"></iconify-icon>
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <!-- Proyecto 2 -->
-                                <a href="https://www.google.com/" class="project-card">
-                                    <div class="project-image" style="background-image: url('/img/Image-primary.jpg');">
-                                        <div class="project-content">
-                                            <h3 class="project-title">Fenix</h3>
-                                            <p class="project-description">Breve descripción del proyecto</p>
-                                        </div>
-                                        <div class="project-link">
-                                            <iconify-icon icon="material-symbols:arrow-outward"></iconify-icon>
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <!-- Proyecto 2 -->
-                                <a href="https://www.google.com/" class="project-card">
-                                    <div class="project-image" style="background-image: url('/img/Image-primary.jpg');">
-                                        <div class="project-content">
-                                            <h3 class="project-title">Univerzip</h3>
-                                            <p class="project-description">Breve descripción del proyecto</p>
-                                        </div>
-                                        <div class="project-link">
-                                            <iconify-icon icon="material-symbols:arrow-outward"></iconify-icon>
-                                        </div>
-                                    </div>
-                                </a>
+                    <!-- Artículo 2 -->
+                    <article class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title-date">
+                                <h3>Desarrollador Front-End Aptugo</h3>
+                                <p><time datetime="2025">2023</time> - <time datetime="present">2024</time></p>
+                            </div>
+                            <div class="experience-company">
+                                <p>Aptugo Agency</p>
                             </div>
                         </div>
 
-                        <div class="experience-tasks">
-                            <h4>Key Responsibilities:</h4>
-                            <ul>
-                                <li>Conducted user research and usability testing to drive design decisions</li>
-                                <li>Created wireframes, prototypes, and high-fidelity visual designs</li>
-                                <li>Developed and maintained design systems for consistent branding</li>
-                                <li>Worked cross-functionally to ensure seamless implementation of designs</li>
-                                <li>Led the design of responsive interfaces for all device sizes</li>
-                                <li>Managed a small team of junior designers</li>
-                                <li>Presented design concepts to clients and stakeholders</li>
-                                <li>Stayed updated on industry trends and technologies</li>
-                            </ul>
-                        </div>
+                        <div class="experience-content">
+                            <p class="experience-description">
+                                En Aptugo desempeño el rol de desarrollador Front-End, enfocándome en la maquetación y
+                                aplicación de estilos utilizando la herramienta propia de la empresa. Trabajo en
+                                distintos
+                                proyectos, aplicando los diseños solicitados por los clientes, manteniéndome fiel a sus
+                                lineamientos pero también proponiendo pequeñas mejoras cuando lo considero necesario.
+                                Desarrollo sitios responsivos, investigo y creo componentes personalizados dentro de la
+                                herramienta, y colaboro de forma constante con mis compañeros.
+                            </p>
 
-                    </div>
-                </article>
-
-                <!-- Primer puesto - Artículo 3 -->
-                <article class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-title-date">
-                            <h3>ACADEMY COACH & DEVELOPER | APTUGO</h3>
-                            <p><time datetime="2025">12/2022</time> - <time datetime="present">08/2023</time></p>
-                        </div>
-                        <div class="experience-company">
-                            <p>Aptugo Academy</p>
-                        </div>
-                    </div>
-
-                    <div class="experience-content">
-                        <p class="experience-description">
-                            Tutoría técnica y soporte constante a estudiantes. Participación en proyectos internos como
-                            desarrollador Front-End, aplicando estilos y estructuras con Aptugo. Creación y mejora de
-                            componentes, desarrollo de sitios responsivos, documentación técnica, testeo y colaboración
-                            activa con el equipo.
-                        </p>
-
-                        <div class="projects-links">
-                            <h4>Selected Projects</h4>
-                            <div class="project-gallery">
-                                <!-- Proyecto 1 -->
-                                <a href="https://devcitos.aptugo.app/" class="project-card">
-                                    <div class="project-image" style="background-image: url('/img/Image-primary.jpg');">
-                                        <div class="project-content">
-                                            <h3 class="project-title">devcitos</h3>
-                                            <p class="project-description">Proyecto para pasar a desarrollador</p>
+                            <div class="projects-links">
+                                <h4>Selected Projects</h4>
+                                <div class="project-gallery">
+                                    <!-- Proyecto 1 -->
+                                    <a href="https://www.google.com/" class="project-card">
+                                        <div class="project-image"
+                                            style="background-image: url('/img/Image-primary.jpg');">
+                                            <div class="project-content">
+                                                <h3 class="project-title">Tasktugo</h3>
+                                                <p class="project-description">Breve descripción del proyecto</p>
+                                            </div>
+                                            <div class="project-link">
+                                                <iconify-icon icon="material-symbols:arrow-outward"></iconify-icon>
+                                            </div>
                                         </div>
-                                        <div class="project-link">
-                                            <iconify-icon icon="material-symbols:arrow-outward"></iconify-icon>
+                                    </a>
+
+                                    <!-- Proyecto 2 -->
+                                    <a href="https://www.google.com/" class="project-card">
+                                        <div class="project-image"
+                                            style="background-image: url('/img/Image-primary.jpg');">
+                                            <div class="project-content">
+                                                <h3 class="project-title">Fenix</h3>
+                                                <p class="project-description">Breve descripción del proyecto</p>
+                                            </div>
+                                            <div class="project-link">
+                                                <iconify-icon icon="material-symbols:arrow-outward"></iconify-icon>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
+                                    </a>
+
+                                    <!-- Proyecto 2 -->
+                                    <a href="https://www.google.com/" class="project-card">
+                                        <div class="project-image"
+                                            style="background-image: url('/img/Image-primary.jpg');">
+                                            <div class="project-content">
+                                                <h3 class="project-title">Univerzip</h3>
+                                                <p class="project-description">Breve descripción del proyecto</p>
+                                            </div>
+                                            <div class="project-link">
+                                                <iconify-icon icon="material-symbols:arrow-outward"></iconify-icon>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="experience-tasks">
+                                <h4>Key Responsibilities:</h4>
+                                <ul>
+                                    <li>Conducted user research and usability testing to drive design decisions</li>
+                                    <li>Created wireframes, prototypes, and high-fidelity visual designs</li>
+                                    <li>Developed and maintained design systems for consistent branding</li>
+                                    <li>Worked cross-functionally to ensure seamless implementation of designs</li>
+                                    <li>Led the design of responsive interfaces for all device sizes</li>
+                                    <li>Managed a small team of junior designers</li>
+                                    <li>Presented design concepts to clients and stakeholders</li>
+                                    <li>Stayed updated on industry trends and technologies</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </article>
+
+                    <!-- Artículo 3 -->
+                    <article class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title-date">
+                                <h3>ACADEMY COACH & DEVELOPER | APTUGO</h3>
+                                <p><time datetime="2025">12/2022</time> - <time datetime="present">08/2023</time></p>
+                            </div>
+                            <div class="experience-company">
+                                <p>Aptugo Academy</p>
                             </div>
                         </div>
 
-                        <div class="experience-tasks">
-                            <h4>Key Responsibilities:</h4>
-                            <ul>
-                                <li>Tutoría técnica y soporte a estudiantes.</li>
-                                <li>Participación inicial en proyectos internos.</li>
-                                <li>Redacción de materiales y documentación técnica.</li>
-                            </ul>
-                        </div>
+                        <div class="experience-content">
+                            <p class="experience-description">
+                                Tutoría técnica y soporte constante a estudiantes. Participación en proyectos internos
+                                como
+                                desarrollador Front-End, aplicando estilos y estructuras con Aptugo. Creación y mejora
+                                de
+                                componentes, desarrollo de sitios responsivos, documentación técnica, testeo y
+                                colaboración
+                                activa con el equipo.
+                            </p>
 
-                    </div>
-                </article>
-
-                <!-- Primer puesto - Artículo 4 -->
-                <article class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-title-date">
-                            <h3>Coach - Tutor</h3>
-                            <p><time datetime="2025">09/2022</time> - <time datetime="present">12/2022</time></p>
-                        </div>
-                        <div class="experience-company">
-                            <p>Aptugo Academy</p>
-                        </div>
-                    </div>
-
-                    <div class="experience-content">
-                        <p class="experience-description">
-                            Asistencia técnica a estudiantes durante las clases. Apoyo en la planificación y mejora de
-                            contenidos, además de ofrecer retroalimentación personalizada. Organización de materiales y
-                            primeros aportes a la documentación.
-                        </p>
-
-                        <div class="projects-links">
-                            <h4>Selected Projects</h4>
-                            <div class="project-gallery">
-                                <!-- Proyecto 1 -->
-                                <a href="https://portafoliomatyg.aptugo.app/" class="project-card">
-                                    <div class="project-image" style="background-image: url('/img/Image-primary.jpg');">
-                                        <div class="project-content">
-                                            <h3 class="project-title">Portfolio</h3>
-                                            <p class="project-description">Breve descripción del proyecto</p>
+                            <div class="projects-links">
+                                <h4>Selected Projects</h4>
+                                <div class="project-gallery">
+                                    <!-- Proyecto 1 -->
+                                    <a href="https://devcitos.aptugo.app/" class="project-card">
+                                        <div class="project-image"
+                                            style="background-image: url('/img/Image-primary.jpg');">
+                                            <div class="project-content">
+                                                <h3 class="project-title">devcitos</h3>
+                                                <p class="project-description">Proyecto para pasar a desarrollador</p>
+                                            </div>
+                                            <div class="project-link">
+                                                <iconify-icon icon="material-symbols:arrow-outward"></iconify-icon>
+                                            </div>
                                         </div>
-                                        <div class="project-link">
-                                            <iconify-icon icon="material-symbols:arrow-outward"></iconify-icon>
-                                        </div>
-                                    </div>
-                                </a>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="experience-tasks">
+                                <h4>Key Responsibilities:</h4>
+                                <ul>
+                                    <li>Tutoría técnica y soporte a estudiantes.</li>
+                                    <li>Participación inicial en proyectos internos.</li>
+                                    <li>Redacción de materiales y documentación técnica.</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </article>
+
+                    <!-- Artículo 4 -->
+                    <article class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title-date">
+                                <h3>Coach - Tutor</h3>
+                                <p><time datetime="2025">09/2022</time> - <time datetime="present">12/2022</time></p>
+                            </div>
+                            <div class="experience-company">
+                                <p>Aptugo Academy</p>
                             </div>
                         </div>
 
-                        <div class="experience-tasks">
-                            <h4>Key Responsibilities:</h4>
-                            <ul>
-                                <li>Asistencia técnica a estudiantes. </li>
-                                <li>Planificación y mejora de clases. </li>
-                                <li>Retroalimentación personalizada y organización de materiales.</li>
-                            </ul>
-                        </div>
+                        <div class="experience-content">
+                            <p class="experience-description">
+                                Asistencia técnica a estudiantes durante las clases. Apoyo en la planificación y mejora
+                                de
+                                contenidos, además de ofrecer retroalimentación personalizada. Organización de
+                                materiales y
+                                primeros aportes a la documentación.
+                            </p>
 
-                    </div>
-                </article>
-
-                <!-- Primer puesto - Artículo 5 -->
-                <article class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-title-date">
-                            <h3>Intern – Aptugo Academy</h3>
-                            <p><time datetime="2025">07/2022</time> - <time datetime="present">09/2022</time></p>
-                        </div>
-                        <div class="experience-company">
-                            <p>Aptugo Academy</p>
-                        </div>
-                    </div>
-
-                    <div class="experience-content">
-                        <p class="experience-description">
-                            Entrenamiento intensivo en el uso de la herramienta Aptugo. Resolución de dudas técnicas en
-                            la plataforma de estudio y práctica aplicada sobre maquetación y estilos.
-                        </p>
-
-                        <div class="projects-links">
-                            <h4>Selected Projects</h4>
-                            <div class="project-gallery">
-                                <!-- Proyecto 1 -->
-                                <a href="https://cyberpunk.aptugo.app/" class="project-card">
-                                    <div class="project-image" style="background-image: url('/img/Image-primary.jpg');">
-                                        <div class="project-content">
-                                            <h3 class="project-title">blog cyberpunk</h3>
-                                            <p class="project-description">Entrega de proyecto para graduarse en aptugo</p>
+                            <div class="projects-links">
+                                <h4>Selected Projects</h4>
+                                <div class="project-gallery">
+                                    <!-- Proyecto 1 -->
+                                    <a href="https://portafoliomatyg.aptugo.app/" class="project-card">
+                                        <div class="project-image"
+                                            style="background-image: url('/img/Image-primary.jpg');">
+                                            <div class="project-content">
+                                                <h3 class="project-title">Portfolio</h3>
+                                                <p class="project-description">Breve descripción del proyecto</p>
+                                            </div>
+                                            <div class="project-link">
+                                                <iconify-icon icon="material-symbols:arrow-outward"></iconify-icon>
+                                            </div>
                                         </div>
-                                        <div class="project-link">
-                                            <iconify-icon icon="material-symbols:arrow-outward"></iconify-icon>
-                                        </div>
-                                    </div>
-                                </a>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="experience-tasks">
+                                <h4>Key Responsibilities:</h4>
+                                <ul>
+                                    <li>Asistencia técnica a estudiantes. </li>
+                                    <li>Planificación y mejora de clases. </li>
+                                    <li>Retroalimentación personalizada y organización de materiales.</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </article>
+
+                    <!-- Artículo 5 -->
+                    <article class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title-date">
+                                <h3>Intern – Aptugo Academy</h3>
+                                <p><time datetime="2025">07/2022</time> - <time datetime="present">09/2022</time></p>
+                            </div>
+                            <div class="experience-company">
+                                <p>Aptugo Academy</p>
                             </div>
                         </div>
 
-                        <div class="experience-tasks">
-                            <h4>Key Responsibilities:</h4>
-                            <ul>
-                                <li>Conducted user research and usability testing to drive design decisions</li>
-                                <li>Created wireframes, prototypes, and high-fidelity visual designs</li>
-                                <li>Developed and maintained design systems for consistent branding</li>
-                                <li>Worked cross-functionally to ensure seamless implementation of designs</li>
-                                <li>Led the design of responsive interfaces for all device sizes</li>
-                                <li>Managed a small team of junior designers</li>
-                                <li>Presented design concepts to clients and stakeholders</li>
-                                <li>Stayed updated on industry trends and technologies</li>
-                            </ul>
+                        <div class="experience-content">
+                            <p class="experience-description">
+                                Entrenamiento intensivo en el uso de la herramienta Aptugo. Resolución de dudas técnicas
+                                en
+                                la plataforma de estudio y práctica aplicada sobre maquetación y estilos.
+                            </p>
+
+                            <div class="projects-links">
+                                <h4>Selected Projects</h4>
+                                <div class="project-gallery">
+                                    <!-- Proyecto 1 -->
+                                    <a href="https://cyberpunk.aptugo.app/" class="project-card">
+                                        <div class="project-image"
+                                            style="background-image: url('/img/Image-primary.jpg');">
+                                            <div class="project-content">
+                                                <h3 class="project-title">blog cyberpunk</h3>
+                                                <p class="project-description">Entrega de proyecto para graduarse en
+                                                    aptugo
+                                                </p>
+                                            </div>
+                                            <div class="project-link">
+                                                <iconify-icon icon="material-symbols:arrow-outward"></iconify-icon>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="experience-tasks">
+                                <h4>Key Responsibilities:</h4>
+                                <ul>
+                                    <li>Conducted user research and usability testing to drive design decisions</li>
+                                    <li>Created wireframes, prototypes, and high-fidelity visual designs</li>
+                                    <li>Developed and maintained design systems for consistent branding</li>
+                                    <li>Worked cross-functionally to ensure seamless implementation of designs</li>
+                                    <li>Led the design of responsive interfaces for all device sizes</li>
+                                    <li>Managed a small team of junior designers</li>
+                                    <li>Presented design concepts to clients and stakeholders</li>
+                                    <li>Stayed updated on industry trends and technologies</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
+
+                <!-- contenido de experiencia extra, como proyectos propios como hobbie o entregables para certificados-->
+                <div class="tab-content" id="tab-extra">
+                    <!-- Artículo 1 -->
+                    <article class="experience-item">
+                        
+                        <div class="experience-header">
+                            <div class="experience-title-date">
+                                <h3>Proyectos de Facultad</h3>
+                                <p><time datetime="2023">2021</time> - <time datetime="2023">2023</time></p>
+                            </div>
+                            <div class="experience-company">
+                                <p>Universidad Nacional de Catamarca</p>
+                            </div>
                         </div>
 
-                    </div>
-                </article>
+                        <div class="experience-content">
+                            <p class="experience-description">
+                                Durante mis estudios participé en diversos proyectos académicos interdisciplinarios,
+                                varios de los cuales fueron premiados a nivel provincial.
+                            </p>
+
+                            <div class="projects-links">
+                                <h4>Proyectos Destacados</h4>
+                                <div class="project-gallery">
+                                    <a href="#" class="project-card">
+                                        <div class="project-image"
+                                            style="background-image: url('/img/Image-primary.jpg');">
+                                            <div class="project-content">
+                                                <h3 class="project-title">Sistema de Riego Automatizado</h3>
+                                                <p class="project-description">Proyecto interdisciplinario con enfoque
+                                                    en eficiencia hídrica.</p>
+                                            </div>
+                                            <div class="project-link">
+                                                <iconify-icon icon="material-symbols:arrow-outward"></iconify-icon>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
 
             </div>
         </section>
@@ -687,6 +762,24 @@
         });
     </script>
 
+    <!-- controlador del tabs en experiencia-->
+    <script>
+        const tabButtons = document.querySelectorAll(".tab-button");
+        const tabContents = document.querySelectorAll(".tab-content");
+
+        tabButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                const target = button.dataset.tab;
+
+                tabButtons.forEach(btn => btn.classList.remove("active"));
+                button.classList.add("active");
+
+                tabContents.forEach(content => {
+                    content.classList.toggle("active", content.id === `tab-${target}`);
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
