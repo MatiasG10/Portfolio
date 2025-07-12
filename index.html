@@ -178,8 +178,7 @@
                                 <div class="project-gallery">
                                     <!-- Proyecto 1 -->
                                     <a href="https://3impacto.eco/" class="project-card">
-                                        <div class="project-image"
-                                            style="background-image: url('/img/3impacto.JPG');">
+                                        <div class="project-image" style="background-image: url('/img/3impacto.JPG');">
                                             <div class="project-content">
                                                 <h3 class="project-title">3impacto</h3>
                                                 <p class="project-description">Breve descripción del proyecto</p>
@@ -276,8 +275,7 @@
 
                                     <!-- Proyecto 2 -->
                                     <a href="https://univerzip.aptugo.app/" class="project-card">
-                                        <div class="project-image"
-                                            style="background-image: url('/img/Univerzip.JPG');">
+                                        <div class="project-image" style="background-image: url('/img/Univerzip.JPG');">
                                             <div class="project-content">
                                                 <h3 class="project-title">Univerzip</h3>
                                                 <p class="project-description">Breve descripción del proyecto</p>
@@ -335,8 +333,7 @@
                                 <div class="project-gallery">
                                     <!-- Proyecto 1 -->
                                     <a href="https://devcitos.aptugo.app/" class="project-card">
-                                        <div class="project-image"
-                                            style="background-image: url('/img/Devcitos.JPG');">
+                                        <div class="project-image" style="background-image: url('/img/Devcitos.JPG');">
                                             <div class="project-content">
                                                 <h3 class="project-title">devcitos</h3>
                                                 <p class="project-description">Proyecto para pasar a desarrollador</p>
@@ -597,7 +594,7 @@
         <section id="skills" class="section skills">
 
             <div class="skill-tools fade-in-left">
-                <h2 >Skills & Tools</h2>
+                <h2>Skills & Tools</h2>
 
                 <!-- category -->
                 <div class="skill-category">
@@ -858,10 +855,14 @@
         const fadeInElements = document.querySelectorAll('[class*="fade-in"]');
 
         const fadeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+            entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                    // Agregar con retardo
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100); // 100ms entre cada uno
                 } else {
+                    //volver a ocultar para reanimar si se vuelve a la sección
                     entry.target.classList.remove('visible');
                 }
             });
