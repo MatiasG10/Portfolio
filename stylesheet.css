@@ -254,7 +254,7 @@ header {
         text-decoration: none;
         display: inline-block;
 
-       & .animated-download {
+        & .animated-download {
             position: relative;
             overflow: hidden;
             height: 3rem;
@@ -266,7 +266,7 @@ header {
             cursor: pointer;
             border: none;
 
-           & span {
+            & span {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -277,12 +277,12 @@ header {
                 left: 0;
             }
 
-           & .text {
+            & .text {
                 top: 0;
                 transform: translateY(0);
             }
 
-           & .icon {
+            & .icon {
                 top: -100%;
                 transform: translateY(0);
                 font-size: 1.5rem;
@@ -817,20 +817,46 @@ main {
                 font-size: 2rem;
             }
 
-            /* === Styles for Skills === */
+            /* --- Styles for Skills --- */
             .skill-tools {
-                .skill-category {
-                    .skill-list {
+                /*skills tabs*/
+                .skills-tabs {
+                    display: flex;
+                    gap: 1rem;
+                    margin: 2rem 0;
+                    flex-wrap: wrap;
+
+                    /*buttons*/
+                    .skills-tab-button {
+                        border: none;
+                        background-color: transparent;
+                        font-weight: bold;
+                        font-size: 1.25rem;
+                        cursor: pointer;
+                        color: var(--Main-color);
+                        transition: all 0.3s;
+                    }
+
+                    .skills-tab-button.active {
+                        border-bottom: 1px solid var(--Main-color);
+                    }
+                }
+
+                .skills-tab-content {
+                    display: none;
+                    margin-top: 1rem;
+
+                    .skills-list {
                         list-style: none;
 
-                        .skill-item {
+                        li {
                             padding-left: 8px;
                             color: var(--text-light);
                             font-size: 20px;
                             font-weight: 600;
                         }
 
-                        .skill-item::before {
+                        li::before {
                             content: "•";
                             color: var(--Main-color);
                             font-size: 1.5rem;
@@ -839,6 +865,11 @@ main {
                     }
                 }
 
+                .skills-tab-content.active {
+                    display: block;
+                }
+
+                /*icon section*/
                 .tools-grid {
                     padding: 4rem 1rem;
                     display: grid;
@@ -860,7 +891,6 @@ main {
 
                         img:hover {
                             transform: scale(1.1);
-                            /* Efecto hover */
                         }
 
                         span {
@@ -872,10 +902,9 @@ main {
 
                     }
                 }
-
             }
 
-            /* === Styles for Languages === */
+            /* --- Styles for Languages --- */
             .languages {
                 padding: 2rem 0rem;
 
@@ -921,7 +950,7 @@ main {
                 }
             }
 
-            /* === Styles for Education/Certifications === */
+            /* --- Styles for Education/Certifications --- */
             .education {
                 .timeline-container {
                     position: relative;

@@ -240,13 +240,15 @@
 
                         <div class="experience-content">
                             <p class="experience-description">
-                                En Aptugo desempeño el rol de desarrollador Front-End, enfocándome en la maquetación y
-                                aplicación de estilos utilizando la herramienta propia de la empresa. Trabajo en
-                                distintos
-                                proyectos, aplicando los diseños solicitados por los clientes, manteniéndome fiel a sus
-                                lineamientos pero también proponiendo pequeñas mejoras cuando lo considero necesario.
-                                Desarrollo sitios responsivos, investigo y creo componentes personalizados dentro de la
-                                herramienta, y colaboro de forma constante con mis compañeros.
+                                Durante mis primeros proyectos reales en Aptugo, participé activamente en tareas de
+                                maquetación y aplicación de estilos utilizando la herramienta propia de la empresa.
+                                Contribuí en la construcción de interfaces cuidando los detalles visuales y funcionales,
+                                asegurándome de respetar los lineamientos de diseño establecidos. Me encargué de cargar
+                                correctamente la información necesaria en cada proyecto —como textos, íconos e imágenes—
+                                y realicé pruebas en versiones desktop y mobile para garantizar una experiencia fluida
+                                en distintos dispositivos. También colaboré en la implementación de pequeñas
+                                funcionalidades, lo que me permitió afianzar mis conocimientos y comenzar a trabajar con
+                                mayor autonomía dentro del equipo.
                             </p>
 
                             <div class="projects-links">
@@ -298,14 +300,14 @@
                             <div class="experience-tasks">
                                 <h4>Key Responsibilities:</h4>
                                 <ul>
-                                    <li>Conducted user research and usability testing to drive design decisions</li>
-                                    <li>Created wireframes, prototypes, and high-fidelity visual designs</li>
-                                    <li>Developed and maintained design systems for consistent branding</li>
-                                    <li>Worked cross-functionally to ensure seamless implementation of designs</li>
-                                    <li>Led the design of responsive interfaces for all device sizes</li>
-                                    <li>Managed a small team of junior designers</li>
-                                    <li>Presented design concepts to clients and stakeholders</li>
-                                    <li>Stayed updated on industry trends and technologies</li>
+                                    <li>Aplicación de maquetación responsive utilizando la herramienta Aptugo.</li>
+                                    <li>Implementación de estilos visuales coherentes con el diseño propuesto.</li>
+                                    <li>Carga estructurada de contenido: textos, imágenes e íconos.</li>
+                                    <li>Pruebas y testeo de aplicaciones en entornos desktop y mobile.</li>
+                                    <li>Colaboración con otros miembros del equipo en ajustes y mejoras visuales.</li>
+                                    <li>Aplicación de pequeñas funcionalidades dentro de la herramienta.</li>
+                                    <li>Mayor comprensión del flujo de trabajo en proyectos reales.</li>
+                                    <li>Mejora en la organización personal y el seguimiento de tareas.</li>
                                 </ul>
                             </div>
 
@@ -328,9 +330,8 @@
                             <p class="experience-description">
                                 Tutoría técnica y soporte constante a estudiantes. Participación en proyectos internos
                                 como
-                                desarrollador Front-End, aplicando estilos y estructuras con Aptugo. Creación y mejora
-                                de
-                                componentes, desarrollo de sitios responsivos, documentación técnica, testeo y
+                                desarrollador Front-End, aplicando estilos y estructuras con Aptugo. Desarrollo de
+                                sitios responsivos, documentación técnica, testeo y
                                 colaboración
                                 activa con el equipo.
                             </p>
@@ -599,20 +600,42 @@
 
         <!-- SKILLS SECTION -->
         <section id="skills" class="section skills">
-
+            <h2>Habilidades y herramientas</h2>
             <div class="skill-tools fade-in-left">
-                <h2>Skills & Tools</h2>
+                <!-- Tabs -->
+                <div class="skills-tabs">
+                    <button class="skills-tab-button active" data-tab="technical">Skills Técnicos</button>
+                    <button class="skills-tab-button" data-tab="tools">Herramientas</button>
+                    <button class="skills-tab-button" data-tab="soft">Habilidades Blandas</button>
+                </div>
 
-                <!-- category -->
-                <div class="skill-category">
-                    <ul class="skill-list">
-                        <li class="skill-item">User Research</li>
-                        <li class="skill-item">Wireframing/Prototyping</li>
-                        <li class="skill-item">Interaction Design</li>
-                        <li class="skill-item">Responsive Web Design</li>
-                        <li class="skill-item">Usability Testing</li>
-                        <li class="skill-item">Visual Design</li>
-                        <li class="skill-item">Design Systems</li>
+                <!-- tabs container  -->
+                <div class="skills-tab-content active" id="skills-tab-technical">
+                    <ul class="skills-list">
+                        <li>HTML5 / CSS3 / SCSS</li>
+                        <li>Responsive Design & adaptación mobile</li>
+                        <li>Maquetación precisa y fiel a diseño</li>
+                        <li>Testing manual en desktop y mobile</li>
+                        <li>Creación de componentes personalizados con Aptugo</li>
+                    </ul>
+                </div>
+
+                <div class="skills-tab-content" id="skills-tab-tools">
+                    <ul class="skills-list">
+                        <li>Aptugo</li>
+                        <li>Canva</li>
+                        <li>Trello / Jira (básico)</li>
+                        <li>Google Docs / Excel / Word</li>
+                    </ul>
+                </div>
+
+                <div class="skills-tab-content" id="skills-tab-soft">
+                    <ul class="skills-list">
+                        <li>Organización y liderazgo de tareas</li>
+                        <li>Trabajo en equipo</li>
+                        <li>Atención al detalle</li>
+                        <li>Proactividad y resolución de problemas</li>
+                        <li>Comunicación con clientes y colegas</li>
                     </ul>
                 </div>
 
@@ -878,6 +901,24 @@
         });
 
         fadeInElements.forEach(el => fadeObserver.observe(el));
+    </script>
+
+    <script>
+        const skillsTabs = document.querySelectorAll(".skills-tab-button");
+        const skillsContents = document.querySelectorAll(".skills-tab-content");
+
+        skillsTabs.forEach(button => {
+            button.addEventListener("click", () => {
+                const target = button.dataset.tab;
+
+                skillsTabs.forEach(btn => btn.classList.remove("active"));
+                button.classList.add("active");
+
+                skillsContents.forEach(content => {
+                    content.classList.toggle("active", content.id === `skills-tab-${target}`);
+                });
+            });
+        });
     </script>
 </body>
 
