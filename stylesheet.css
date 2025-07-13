@@ -819,6 +819,7 @@ main {
 
             /* --- Styles for Skills --- */
             .skill-tools {
+
                 /*skills tabs*/
                 .skills-tabs {
                     display: flex;
@@ -871,7 +872,7 @@ main {
 
                 /*icon section*/
                 .tools-grid {
-                    padding: 4rem 1rem;
+                    padding: 4rem 0rem;
                     display: grid;
                     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
                     gap: 20px;
@@ -906,7 +907,6 @@ main {
 
             /* --- Styles for Languages --- */
             .languages {
-                padding: 2rem 0rem;
 
                 .language-item {
                     display: flex;
@@ -952,6 +952,7 @@ main {
 
             /* --- Styles for Education/Certifications --- */
             .education {
+                padding: 2rem 0;
                 .timeline-container {
                     position: relative;
                     padding-left: 36px;
@@ -1006,7 +1007,7 @@ main {
 
     @media (min-width:768px) {
         .skills {
-            padding: 4rem;
+            padding: 0rem 5rem;
         }
     }
 
