@@ -184,7 +184,9 @@
                                 <h4>Selected Projects</h4>
                                 <div class="project-gallery">
                                     <!-- Proyecto 1 -->
-                                    <a href="https://3impacto.eco/" class="project-card">
+                                    <div class="project-card" data-title="3impacto"
+                                        data-description="Plataforma web con enfoque de triple impacto: económico, social y ambiental."
+                                        data-image="/img/3impacto.JPG" data-link="https://3impacto.eco/">
                                         <div class="project-image" style="background-image: url('/img/3impacto.JPG');">
                                             <div class="project-content">
                                                 <h3 class="project-title">3impacto</h3>
@@ -194,7 +196,7 @@
                                                 <iconify-icon icon="material-symbols:arrow-outward"></iconify-icon>
                                             </div>
                                         </div>
-                                    </a>
+                                    </div>
 
                                     <!-- Proyecto 2 -->
                                     <a href="https://match4room.com/" class="project-card">
@@ -980,6 +982,41 @@
                 skillsContents.forEach(content => {
                     content.classList.toggle("active", content.id === `skills-tab-${target}`);
                 });
+            });
+        });
+    </script>
+
+    <!--modal estructura y funcion-->
+    <div class="modal-overlay" id="project-modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">×</button>
+            <img src="" alt="Imagen del proyecto" id="modal-image">
+            <h2 id="modal-title">Título del Proyecto</h2>
+            <p id="modal-description">Descripción del proyecto</p>
+            <a href="#" target="_blank" id="modal-link" class="modal-link-button">Ver Proyecto</a>
+        </div>
+    </div>
+
+    <script>
+        function openModal(title, description, imageUrl, linkUrl) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-description').innerText = description;
+            document.getElementById('modal-image').src = imageUrl;
+            document.getElementById('modal-link').href = linkUrl;
+            document.getElementById('project-modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('project-modal').style.display = 'none';
+        }
+
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.getAttribute('data-title');
+                const description = card.getAttribute('data-description');
+                const image = card.getAttribute('data-image');
+                const link = card.getAttribute('data-link');
+                openModal(title, description, image, link);
             });
         });
     </script>
