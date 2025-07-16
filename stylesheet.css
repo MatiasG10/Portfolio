@@ -1339,6 +1339,10 @@ main::after {
         & .container-modal-link {
             padding: 1rem 1.5rem;
             flex-direction: row;
+            align-items: center;
+            & .tech-tags {
+                width: 55%;
+            }
         }
     }
 }
