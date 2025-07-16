@@ -1201,12 +1201,11 @@ main::after {
 
     & .project-modal-content {
         display: flex;
-        flex-direction: column;
         gap: 1.5rem;
-        padding: 1.5rem;
+        padding: 1.5rem 1.5rem 0 1.5rem;
 
         & .modal-image-wrapper {
-            width: 100%;
+            width: 60%;
 
             & img {
                 width: 100%;
@@ -1220,28 +1219,83 @@ main::after {
             display: flex;
             flex-direction: column;
             gap: 1rem;
+            width: 40%;
 
             & #modal-description {
                 font-size: 1rem;
                 line-height: 1.6;
                 color: var(--light-color, #ecf0f1);
-            }
+                height: 13rem;
+                overflow-y: scroll;
 
-            & .modal-link {
-                display: inline-block;
-                background-color: var(--Main-color, #FFB800);
-                color: #000;
-                font-weight: bold;
-                text-decoration: none;
-                padding: 0.75rem 1.5rem;
-                border-radius: 2rem;
-                align-self: flex-start;
-                transition: background-color 0.3s ease;
-            }
+                /* Scroll personalizado (WebKit) */
+                &::-webkit-scrollbar {
+                    width: 6px;
+                }
 
-            & .modal-link:hover {
-                background-color: #e0a600;
+                &::-webkit-scrollbar-track {
+                    background: rgba(0, 0, 0, 0.1);
+                    border-radius: 3px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: rgba(255, 255, 255, 0.4);
+                    border-radius: 3px;
+                }
+
+                &::-webkit-scrollbar-thumb:hover {
+                    background: rgba(255, 255, 255, 0.6);
+                }
+
+                /* Firefox (opcional) */
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255, 255, 255, 0.4) rgba(0, 0, 0, 0.1);
             }
         }
     }
+
+    & .container-modal-link {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+
+        & .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-content: center;
+
+            & .tech-tag {
+                background-color: rgba(255, 255, 255, 0.1);
+                color: var(--text-light, #ffffff);
+                padding: 0.4rem 0.8rem;
+                border-radius: 999px;
+                font-size: 0.875rem;
+                font-weight: 500;
+                white-space: nowrap;
+                height: fit-content;
+            }
+        }
+
+        & .modal-link {
+            display: inline-block;
+            background-color: var(--Main-color, #FFB800);
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            align-self: flex-start;
+            transition: background-color 0.3s ease;
+        }
+
+        & .modal-link:hover {
+            background-color: #e0a600;
+        }
+    }
+
 }
+
+
+/*scroll*/
