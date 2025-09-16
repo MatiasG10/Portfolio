@@ -331,7 +331,7 @@ header {
 /*section main*/
 main {
     position: relative;
-    background: url(./img/Image-primary.jpg) no-repeat center center/cover;
+    background: url(./img/gradient.png) no-repeat center center/cover;
     background-attachment: fixed;
 
     .section {
