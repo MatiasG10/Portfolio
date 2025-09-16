@@ -539,6 +539,8 @@ main {
     @media (min-width:320px) {
         .work-experience {
             padding: 4rem 0 2rem 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--Main-color) rgba(0, 0, 0, 0.1);
 
             .tabs {
                 display: flex;
@@ -787,6 +789,25 @@ main {
                 }
             }
         }
+
+        .work-experience::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .work-experience::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
+            margin: 4px 0;
+        }
+
+        .work-experience::-webkit-scrollbar-thumb {
+            background: var(--Main-color);
+            border-radius: 3px;
+        }
+
+        .work-experience::-webkit-scrollbar-thumb:hover {
+            background: #e0a600;
+        }
     }
 
     @media (min-width:768px) {
@@ -800,10 +821,21 @@ main {
             display: grid;
             grid-template-columns: 1fr;
             justify-content: start;
+            height: 100vh;
+            overflow: auto;
+            width: 75%;
+            padding: 0 1rem 1rem 4rem;
+            margin: 4rem 0;
         }
 
         .experience-item {
             max-width: 600px;
+        }
+    }
+
+    @media (min-width:1512px) {
+        .work-experience {
+            width: 50%;
         }
     }
 
@@ -1340,6 +1372,7 @@ main::after {
             padding: 1rem 1.5rem;
             flex-direction: row;
             align-items: center;
+
             & .tech-tags {
                 width: 55%;
             }
