@@ -4,18 +4,25 @@
  * Renderiza un proyecto individual
  */
 function renderProject(project) {
-  return `
-    <a href="${project.link}" class="project-card">
+  const hasModal = project.hasModal || project.descriptionLong;
+
+    return `
+    <div class="project-card" 
+         data-title="${project.title}" 
+         data-description="${project.descriptionLong || project.description}" 
+         data-image="${project.image}" 
+         data-link="${project.link}"
+         ${hasModal ? 'style="cursor: pointer;"' : ''}>
       <div class="project-image" style="background-image: url('${project.image}');">
         <div class="project-content">
           <h3 class="project-title">${project.title}</h3>
           <p class="project-description">${project.description}</p>
         </div>
-        <div class="project-link">
+        <a href="${project.link}" target="_blank" class="project-link" onclick="event.stopPropagation()">
           <iconify-icon icon="material-symbols:arrow-outward"></iconify-icon>
-        </div>
+        </a>
       </div>
-    </a>
+    </div>
   `;
 }
 
