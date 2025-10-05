@@ -860,7 +860,83 @@
     <!-- FOOTER -->
 
     <script src="js/data.js"></script>
+    <script src="js/modal-data.js"></script>
     <script src="js/renderer.js"></script>
+
+    <!--modal estructura y funcion-->
+    <div id="project-modal" class="project-modal" style="display: none">
+        <div class="project-modal-dialog">
+            <div class="project-modal-header">
+                <h2 class="modal-title" id="modal-title">Título del Proyecto</h2>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+
+            <div class="project-modal-content">
+                <div class="modal-image-wrapper">
+                    <img id="modal-image" src="" alt="Imagen del proyecto">
+
+                </div>
+                <div class="modal-description-wrapper">
+                    <p id="modal-description">Descripción del proyecto</p>
+                </div>
+            </div>
+
+            <div class="container-modal-link">
+                <div class="tech-tags" id="modal-tags">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <a id="modal-link" class="modal-link" href="#" target="_blank">Ir al sitio</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('click', function (e) {
+            const projectCard = e.target.closest('.project-card');
+            if (projectCard) {
+                const projectTitle = projectCard.getAttribute('data-title');
+                const projectData = projectDetails[projectTitle];
+
+                if (projectData) {
+                    openModal(projectData);
+                }
+            }
+        });
+
+        // Función openModal actualizada
+        function openModal(projectData) {
+            document.getElementById('modal-title').textContent = projectData.title;
+            document.getElementById('modal-description').textContent = projectData.description;
+            document.getElementById('modal-image').src = projectData.image;
+            document.getElementById('modal-link').href = projectData.link;
+
+            // Actualizar tags
+            const tagsContainer = document.getElementById('modal-tags');
+            tagsContainer.innerHTML = ''; // Limpiar tags anteriores
+
+            projectData.tags.forEach(tag => {
+                const tagElement = document.createElement('span');
+                tagElement.className = 'tech-tag';
+                tagElement.textContent = tag;
+                tagsContainer.appendChild(tagElement);
+            });
+
+            document.getElementById('project-modal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Función closeModal
+        function closeModal() {
+            document.getElementById('project-modal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    </script>
+    <!--modal estructura y funcion FIN-->
+
+
 
     <!-- funcionalidad para barra de navegacion-->
     <script>
@@ -996,69 +1072,6 @@
             });
         });
     </script>
-
-    <!--modal estructura y funcion-->
-    <div id="project-modal" class="project-modal" style="display: none">
-        <div class="project-modal-dialog">
-            <div class="project-modal-header">
-                <h2 class="modal-title" id="modal-title">Título del Proyecto</h2>
-                <button class="modal-close" onclick="closeModal()">×</button>
-            </div>
-
-            <div class="project-modal-content">
-                <div class="modal-image-wrapper">
-                    <img id="modal-image" src="" alt="Imagen del proyecto">
-
-                </div>
-                <div class="modal-description-wrapper">
-                    <p id="modal-description">Descripción del proyecto</p>
-                </div>
-            </div>
-
-            <div class="container-modal-link">
-                <div class="tech-tags" id="modal-tags">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">CSS</span>
-                    <span class="tech-tag">JavaScript</span>
-                </div>
-                <a id="modal-link" class="modal-link" href="#" target="_blank">Ir al sitio</a>
-            </div>
-
-        </div>
-    </div>
-
-    <script>
-        function openModal(title, description, imageUrl, linkUrl) {
-            document.getElementById('modal-title').textContent = title;
-            document.getElementById('modal-description').textContent = description;
-            document.getElementById('modal-image').src = imageUrl;
-            document.getElementById('modal-link').href = linkUrl;
-            document.getElementById('project-modal').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            document.getElementById('project-modal').style.display = 'none';
-            document.body.style.overflow = '';
-        }
-
-        document.addEventListener('click', function (e) {
-            const projectCard = e.target.closest('.project-card');
-            if (projectCard) {
-                const title = projectCard.getAttribute('data-title');
-                const description = projectCard.getAttribute('data-description');
-                const image = projectCard.getAttribute('data-image');
-                const link = projectCard.getAttribute('data-link');
-
-                // Solo abre modal si tiene descripción larga o está marcado con hasModal
-                if (projectCard.hasAttribute('data-description') &&
-                    projectCard.getAttribute('data-description').length > 50) {
-                    openModal(title, description, image, link);
-                }
-            }
-        });
-    </script>
-    <!--modal estructura y funcion FIN-->
 
     <!--particulas de fondo-->
     <script>

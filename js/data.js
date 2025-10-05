@@ -19,7 +19,8 @@ const experienceData = {
           title: "match4room",
           description: "Breve descripción del proyecto",
           image: "/img/match4room.JPG",
-          link: "https://match4room.com/"
+          link: "https://match4room.com/",
+          hasModal: true
         }
       ],
       responsibilities: [

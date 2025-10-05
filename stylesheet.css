@@ -1337,7 +1337,7 @@ main::after {
 }
 
 @media (min-width:768px) {
-    .project-modal {}
+    /* .project-modal {} */
 }
 
 @media (min-width:900px) {
