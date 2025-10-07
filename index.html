@@ -418,12 +418,9 @@
 
             <div class="project-modal-content">
                 <div class="modal-image-wrapper">
-                    <div class="modal-image-slider">
-                        <button class="slider-btn prev" onclick="changeSlide(-1)">‹</button>
-                        <img id="modal-image" src="" alt="Imagen del proyecto">
-                        <button class="slider-btn next" onclick="changeSlide(1)">›</button>
+                    <div class="modal-image-slider" id="modal-image-slider">
+                        <!-- Las imágenes se cargarán dinámicamente aquí -->
                     </div>
-                    <div class="slider-dots" id="slider-dots"></div>
                 </div>
                 <div class="modal-description-wrapper">
                     <p id="modal-description">Descripción del proyecto</p>
@@ -491,12 +488,21 @@
             document.getElementById('modal-description').textContent = projectData.description;
             document.getElementById('modal-link').href = projectData.link;
 
-            // Manejar imágenes (array o string)
-            currentImages = Array.isArray(projectData.image) ? projectData.image : [projectData.image];
-            currentSlide = 0;
+            // Manejar imágenes - CARGAR TODAS
+            const images = Array.isArray(projectData.image) ? projectData.image : [projectData.image];
+            const sliderContainer = document.getElementById('modal-image-slider');
 
-            updateSlideImage();
-            createDots();
+            // Limpiar imágenes anteriores
+            sliderContainer.innerHTML = '';
+
+            // Crear un <img> por cada imagen
+            images.forEach((imgSrc, index) => {
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.alt = `${projectData.title} - Imagen ${index + 1}`;
+                img.className = 'modal-image';
+                sliderContainer.appendChild(img);
+            });
 
             // Actualizar tags (tu código existente)
             const tagsContainer = document.getElementById('modal-tags');

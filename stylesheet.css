@@ -1227,13 +1227,13 @@ main::after {
                     background: none;
                     border: none;
                     color: var(--text-light, #fff);
-                    font-size: 1.5rem;
+                    font-size: 2rem;
                     cursor: pointer;
                     transition: transform 0.2s ease;
                 }
 
                 & .modal-close:hover {
-                    transform: scale(1.2);
+                    transform: scale(1.5);
                 }
             }
 
@@ -1247,12 +1247,42 @@ main::after {
                     width: 100%;
                     display: flex;
 
-                    & img {
-                        width: 100%;
-                        height: auto;
-                        border-radius: 0.5rem;
-                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+                    & .modal-image-slider {
+                        display: flex;
+                        gap: 10px;
+                        overflow-x: scroll;
+
+                        & img {
+                            width: 100%;
+                            height: auto;
+                            border-radius: 0.5rem;
+                            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+                            position: sticky;
+                            left: 0;
+                            object-fit: cover;
+                        }
+
+                        /* Scroll personalizado (WebKit) */
+                        &::-webkit-scrollbar {
+                            width: 6px;
+                            height: 8px;
+                        }
+
+                        &::-webkit-scrollbar-track {
+                            background: rgba(0, 0, 0, 0);
+                            border-radius: 2px;
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                            background: rgba(255, 255, 255, 0.4);
+                            border-radius: 10px;
+                        }
+
+                        &::-webkit-scrollbar-thumb:hover {
+                            background: rgba(255, 255, 255, 0.6);
+                        }
                     }
+
                 }
 
                 & .modal-description-wrapper {
@@ -1265,7 +1295,7 @@ main::after {
                         font-size: 1rem;
                         line-height: 1.6;
                         color: var(--light-color, #ecf0f1);
-                        overflow-y: scroll;
+                        overflow-y: auto;
                         flex: 1;
 
                         /* Scroll personalizado (WebKit) */
@@ -1446,13 +1476,15 @@ main::after {
 
 /* Animación para los brillos */
 @keyframes subtle-move {
-    0% { 
-        transform: translate(0, 0); 
+    0% {
+        transform: translate(0, 0);
     }
-    50% { 
-        transform: translate(40px, 30px) scale(1.1); 
+
+    50% {
+        transform: translate(40px, 30px) scale(1.1);
     }
-    100% { 
-        transform: translate(0, 0); 
+
+    100% {
+        transform: translate(0, 0);
     }
 }
