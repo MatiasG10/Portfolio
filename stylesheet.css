@@ -1251,7 +1251,7 @@ main::after {
                         display: flex;
                         gap: 10px;
                         overflow-x: scroll;
-
+                        padding-bottom: 1rem;
                         & img {
                             width: 100%;
                             height: auto;
