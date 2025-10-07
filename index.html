@@ -418,8 +418,12 @@
 
             <div class="project-modal-content">
                 <div class="modal-image-wrapper">
-                    <img id="modal-image" src="" alt="Imagen del proyecto">
-
+                    <div class="modal-image-slider">
+                        <button class="slider-btn prev" onclick="changeSlide(-1)">‹</button>
+                        <img id="modal-image" src="" alt="Imagen del proyecto">
+                        <button class="slider-btn next" onclick="changeSlide(1)">›</button>
+                    </div>
+                    <div class="slider-dots" id="slider-dots"></div>
                 </div>
                 <div class="modal-description-wrapper">
                     <p id="modal-description">Descripción del proyecto</p>
@@ -452,16 +456,51 @@
         });
 
         // Función openModal actualizada
+        // function openModal(projectData) {
+        //     document.getElementById('modal-title').textContent = projectData.title;
+        //     document.getElementById('modal-description').textContent = projectData.description;
+        //     document.getElementById('modal-image').src = projectData.image;
+        //     document.getElementById('modal-link').href = projectData.link;
+
+        //     // Actualizar tags
+        //     const tagsContainer = document.getElementById('modal-tags');
+        //     tagsContainer.innerHTML = ''; // Limpiar tags anteriores
+
+        //     projectData.tags.forEach(tag => {
+        //         const tagElement = document.createElement('span');
+        //         tagElement.className = 'tech-tag';
+        //         tagElement.textContent = tag;
+        //         tagsContainer.appendChild(tagElement);
+        //     });
+
+        //     document.getElementById('project-modal').style.display = 'flex';
+        //     document.body.style.overflow = 'hidden';
+        // }
+
+        // Función closeModal
+        function closeModal() {
+            document.getElementById('project-modal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        let currentSlide = 0;
+        let currentImages = [];
+
         function openModal(projectData) {
             document.getElementById('modal-title').textContent = projectData.title;
             document.getElementById('modal-description').textContent = projectData.description;
-            document.getElementById('modal-image').src = projectData.image;
             document.getElementById('modal-link').href = projectData.link;
 
-            // Actualizar tags
-            const tagsContainer = document.getElementById('modal-tags');
-            tagsContainer.innerHTML = ''; // Limpiar tags anteriores
+            // Manejar imágenes (array o string)
+            currentImages = Array.isArray(projectData.image) ? projectData.image : [projectData.image];
+            currentSlide = 0;
 
+            updateSlideImage();
+            createDots();
+
+            // Actualizar tags (tu código existente)
+            const tagsContainer = document.getElementById('modal-tags');
+            tagsContainer.innerHTML = '';
             projectData.tags.forEach(tag => {
                 const tagElement = document.createElement('span');
                 tagElement.className = 'tech-tag';
@@ -473,10 +512,52 @@
             document.body.style.overflow = 'hidden';
         }
 
-        // Función closeModal
-        function closeModal() {
-            document.getElementById('project-modal').style.display = 'none';
-            document.body.style.overflow = '';
+        function updateSlideImage() {
+            document.getElementById('modal-image').src = currentImages[currentSlide];
+
+            // Actualizar dots activos
+            const dots = document.querySelectorAll('.slider-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+
+            // Ocultar botones si solo hay una imagen
+            const prevBtn = document.querySelector('.slider-btn.prev');
+            const nextBtn = document.querySelector('.slider-btn.next');
+            if (currentImages.length <= 1) {
+                prevBtn.style.display = 'none';
+                nextBtn.style.display = 'none';
+            } else {
+                prevBtn.style.display = 'flex';
+                nextBtn.style.display = 'flex';
+            }
+        }
+
+        function createDots() {
+            const dotsContainer = document.getElementById('slider-dots');
+            dotsContainer.innerHTML = '';
+
+            if (currentImages.length <= 1) return; // No mostrar dots si hay una sola imagen
+
+            currentImages.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.className = 'slider-dot';
+                if (index === 0) dot.classList.add('active');
+                dot.onclick = () => {
+                    currentSlide = index;
+                    updateSlideImage();
+                };
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+
+            if (currentSlide < 0) currentSlide = currentImages.length - 1;
+            if (currentSlide >= currentImages.length) currentSlide = 0;
+
+            updateSlideImage();
         }
     </script>
     <!--modal estructura y funcion FIN-->

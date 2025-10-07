@@ -6,6 +6,9 @@
 function renderProject(project) {
   const hasModal = project.hasModal || project.descriptionLong;
 
+  //obtiene la primer imagen si es array, sino directamente toma el string
+  const primaryImage = Array.isArray(project.image) ? project.image[0] : project.image;
+
     return `
     <div class="project-card" 
          data-title="${project.title}" 
@@ -13,7 +16,7 @@ function renderProject(project) {
          data-image="${project.image}" 
          data-link="${project.link}"
          ${hasModal ? 'style="cursor: pointer;"' : ''}>
-      <div class="project-image" style="background-image: url('${project.image}');">
+      <div class="project-image" style="background-image: url('${primaryImage}');">
         <div class="project-content">
           <h3 class="project-title">${project.title}</h3>
           <p class="project-description">${project.description}</p>

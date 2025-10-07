@@ -2,7 +2,11 @@ const projectDetails = {
   "3impacto": {
     title: "3impacto",
     description: "Trabajé en el Front End de 3impacto, maquetando interfaces con HTML y CSS, dándoles estilos responsive y agregando funcionalidades con JavaScript. Me encargué de que los datos, imágenes e iconos se cargaran correctamente, optimizando el rendimiento y asegurando una buena experiencia de usuario.",
-    image: "/img/3impacto.JPG",
+     image: [
+      "/img/3impacto.JPG",        // Esta es la principal
+      "/img/match4room.JPG",      // cambiar luego por imagenes correctas
+      "/img/TasktugoLogin.JPG"    // cambiar luego por imagenes correctas
+    ],
     link: "https://3impacto.eco/",
     tags: ["HTML", "CSS", "JavaScript", "Responsive Design"]
   },
