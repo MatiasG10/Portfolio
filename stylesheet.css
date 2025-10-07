@@ -1210,6 +1210,13 @@ main::after {
             flex-direction: column;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 
+            /*para animacion de apertura del modal*/
+            scale: 1;
+            transition: scale 0.3s ease, display 0.3s allow-discrete, overlay 0.3s allow-discrete;
+            @starting-style {
+                scale: 0;
+            }
+
             & .project-modal-header {
                 display: flex;
                 justify-content: space-between;
@@ -1252,6 +1259,7 @@ main::after {
                         gap: 10px;
                         overflow-x: scroll;
                         padding-bottom: 1rem;
+
                         & img {
                             width: 100%;
                             height: auto;
