@@ -25,9 +25,7 @@ class InfiniteLoop {
         this.isInitialized = false;
     }
 
-    /**
-     * Inicializar el loop infinito
-     */
+    /*Inicializar el loop infinito*/
     init() {
         if (this.isInitialized) {
             console.warn('InfiniteLoop ya está inicializado');
@@ -46,9 +44,7 @@ class InfiniteLoop {
         console.log('✅ InfiniteLoop inicializado correctamente');
     }
 
-    /**
-     * Buscar y inicializar todos los tracks en el DOM
-     */
+    /*Buscar y inicializar todos los tracks en el DOM*/
     findAndInitializeTracks() {
         const trackElements = document.querySelectorAll('.loop-track');
         
@@ -99,9 +95,7 @@ class InfiniteLoop {
         console.log(`✨ Loop creado para ${trackId} (${items.length} items duplicados)`);
     }
 
-    /**
-     * Configurar efecto parallax con el mouse
-     */
+    /*Configurar efecto parallax con el mouse*/
     setupParallax() {
         document.addEventListener('mousemove', (e) => {
             this.mouseX = e.clientX / window.innerWidth;
@@ -111,9 +105,7 @@ class InfiniteLoop {
         console.log('🖱️ Parallax habilitado');
     }
 
-    /**
-     * Actualizar posición del parallax
-     */
+    /*Actualizar posición del parallax*/
     updateParallax() {
         this.tracks.forEach((track, index) => {
             const speed = (index + 1) * this.options.parallaxSpeed;
@@ -168,27 +160,21 @@ class InfiniteLoop {
         return item;
     }
 
-    /**
-     * Pausar todos los loops
-     */
+    /*Pausar todos los loops*/
     pauseAll() {
         this.tracks.forEach(track => {
             track.style.animationPlayState = 'paused';
         });
     }
 
-    /**
-     * Reanudar todos los loops
-     */
+    /*Reanudar todos los loops*/
     resumeAll() {
         this.tracks.forEach(track => {
             track.style.animationPlayState = 'running';
         });
     }
 
-    /**
-     * Destruir la instancia y limpiar eventos
-     */
+    /*Destruir la instancia y limpiar eventos*/
     destroy() {
         if (this.options.enableParallax) {
             document.removeEventListener('mousemove', this.updateParallax);
@@ -205,10 +191,10 @@ class InfiniteLoop {
 // INICIALIZACIÓN AUTOMÁTICA
 // ============================================
 
-/**
- * Función de inicialización simple (legacy)
- * Mantiene compatibilidad con el código existente
- */
+
+//Función de inicialización simple (legacy)
+//Mantiene compatibilidad con el código existente
+
 function createInfiniteLoop(trackId) {
     const track = document.getElementById(trackId);
     if (!track) return;
