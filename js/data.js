@@ -11,14 +11,14 @@ const experienceData = {
           title: "3impacto",
           description: "Breve descripción del proyecto",
           descriptionLong: "Trabajé en el Front End de 3impacto, maquetando interfaces con HTML y CSS, dándoles estilos responsive y agregando funcionalidades con JavaScript. Me encargué de que los datos, imágenes e iconos se cargaran correctamente, optimizando el rendimiento y asegurando una buena experiencia de usuario. Participé en el desarrollo del sitio web de [Ejemplo: una tienda online], creando la interfaz desde cero con HTML, CSS y JavaScript. Implementé secciones dinámicas, como un carrusel de productos y un formulario de contacto funcional, además de optimizar imágenes y asegurar que todo cargara rápido.",
-          image: "/img/3impacto.JPG",
+          image: "assets/img/3impacto.JPG",
           link: "https://3impacto.eco/",
           hasModal: true
         },
         {
           title: "match4room",
           description: "Breve descripción del proyecto",
-          image: "/img/match4room.JPG",
+          image: "assets/img/match4room.JPG",
           link: "https://match4room.com/",
           hasModal: true
         }
@@ -40,13 +40,13 @@ const experienceData = {
         {
           title: "Tasktugo",
           description: "Breve descripción del proyecto",
-          image: "/img/TasktugoLogin.JPG",
+          image: "assets/img/TasktugoLogin.JPG",
           link: "https://tasktugo.aptugo.com/"
         },
         {
           title: "Univerzip",
           description: "Breve descripción del proyecto",
-          image: "/img/Univerzip.JPG",
+          image: "assets/img/Univerzip.JPG",
           link: "https://univerzip.aptugo.app/"
         }
       ],
@@ -71,7 +71,7 @@ const experienceData = {
         {
           title: "devcitos",
           description: "Proyecto para pasar a desarrollador",
-          image: "/img/Devcitos.JPG",
+          image: "assets/img/Devcitos.JPG",
           link: "https://devcitos.aptugo.app/"
         }
       ],
@@ -91,7 +91,7 @@ const experienceData = {
         {
           title: "Portfolio",
           description: "Breve descripción del proyecto",
-          image: "/img/miPrimerPort.JPG",
+          image: "assets/img/miPrimerPort.JPG",
           link: "https://portafoliomatyg.aptugo.app/"
         }
       ],
@@ -111,7 +111,7 @@ const experienceData = {
         {
           title: "blog cyberpunk",
           description: "Entrega de proyecto para graduarse en aptugo",
-          image: "/img/proyectoCyberpunk.JPG",
+          image: "assets/img/proyectoCyberpunk.JPG",
           link: "https://cyberpunk.aptugo.app/"
         }
       ],
@@ -133,7 +133,7 @@ const experienceData = {
         {
           title: "Catamarket",
           description: "Proyecto interdisciplinario con enfoque en eficiencia hídrica.",
-          image: "/img/catamarket.JPG",
+          image: "assets/img/catamarket.JPG",
           link: "https://catamarket-original.netlify.app/"
         }
       ],
@@ -149,7 +149,7 @@ const experienceData = {
         {
           title: "Tutorias UNCA",
           description: "Proyecto interdisciplinario con enfoque en eficiencia hídrica.",
-          image: "/img/tutoriasUNCA.JPG",
+          image: "assets/img/tutoriasUNCA.JPG",
           link: "https://uncatutorias.aptugo.app/"
         }
       ],
@@ -165,7 +165,7 @@ const experienceData = {
         {
           title: "Sistema de Riego Automatizado",
           description: "Proyecto interdisciplinario con enfoque en eficiencia hídrica.",
-          image: "/img/Image-primary.jpg",
+          image: "assets/img/Image-primary.jpg",
           link: "#"
         }
       ],
