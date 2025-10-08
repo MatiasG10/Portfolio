@@ -1,3 +1,7 @@
+/*importar*/
+@import url('infinite-loop.css');
+
+
 /* Reset y base general */
 * {
     margin: 0;
@@ -945,128 +949,7 @@ main {
             }
 
             /*loop infinito*/
-            .tools-section {
-                width: 100%;
-                overflow: hidden;
-                padding: 3rem 0rem;
-            }
-
-            h2 {
-                color: #FFB800;
-                font-size: 2.5rem;
-                margin-bottom: 2rem;
-                text-align: center;
-            }
-
-            /* Contenedor del loop */
-            .tools-loop {
-                overflow: hidden;
-                position: relative;
-                width: 100%;
-                padding: 2rem 0;
-                mask-image: linear-gradient(to right,
-                        transparent,
-                        black 10%,
-                        black 90%,
-                        transparent);
-                -webkit-mask-image: linear-gradient(to right,
-                        transparent,
-                        black 10%,
-                        black 90%,
-                        transparent);
-            }
-
-            /* Track del loop - CLAVE: width: fit-content */
-            .loop-track {
-                display: flex;
-                gap: 3rem;
-                width: fit-content;
-                animation: scroll 30s linear infinite;
-            }
-
-            /* Pausa al hover */
-            .tools-loop:hover .loop-track {
-                animation-play-state: paused;
-            }
-
-            /* Item individual */
-            .tool-item {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-                min-width: 120px;
-                padding: 1.5rem;
-                background: rgba(255, 255, 255, 0.05);
-                border-radius: 1rem;
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                transition: all 0.3s ease;
-                cursor: pointer;
-            }
-
-            .tool-item:hover {
-                transform: translateY(-8px);
-                background: rgba(255, 255, 255, 0.1);
-                border-color: #FFB800;
-                box-shadow: 0 8px 32px rgba(255, 184, 0, 0.3);
-            }
-
-            .tool-item img {
-                width: 64px;
-                height: 64px;
-                object-fit: contain;
-                filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-            }
-
-            .tool-item span {
-                color: #fff;
-                font-size: 0.9rem;
-                font-weight: 600;
-                text-align: center;
-                white-space: nowrap;
-            }
-
-            /* Versión con múltiples filas (opcional) */
-            .multi-row-loop {
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
-            }
-
-            .loop-row {
-                overflow: hidden;
-                position: relative;
-                mask-image: linear-gradient(to right,
-                        transparent,
-                        black 10%,
-                        black 90%,
-                        transparent);
-            }
-
-            .loop-row:nth-child(even) .loop-track {
-                animation-direction: reverse;
-            }
-
-            /* Responsive */
-            @media (max-width: 768px) {
-                h2 {
-                    font-size: 2rem;
-                }
-
-                .tool-item {
-                    min-width: 100px;
-                    padding: 1rem;
-                }
-
-                .tool-item img {
-                    width: 48px;
-                    height: 48px;
-                }
-
-                .loop-track {
-                    gap: 2rem;
-                }
-            }
+            
 
             /* --- Styles for Languages --- */
             .languages {
@@ -1620,17 +1503,5 @@ main::after {
 
     100% {
         transform: translate(0, 0);
-    }
-}
-
-/*loop infinito*/
-/* Animación del scroll */
-@keyframes scroll {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
     }
 }
