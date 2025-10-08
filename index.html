@@ -856,36 +856,7 @@
     </script>
 
     <!--loop infinito-->
-    <script>
-        // Función para duplicar el contenido y crear loop infinito
-        function createInfiniteLoop(trackId) {
-            const track = document.getElementById(trackId);
-            const items = Array.from(track.children);
-
-            // Duplicar items
-            items.forEach(item => {
-                const clone = item.cloneNode(true);
-                track.appendChild(clone);
-            });
-        }
-
-        // Inicializar todos los loops
-        createInfiniteLoop('loop-track');
-        createInfiniteLoop('loop-track-2');
-        createInfiniteLoop('loop-track-3');
-
-        // Efecto de parallax suave con el mouse (opcional)
-        document.addEventListener('mousemove', (e) => {
-            const tracks = document.querySelectorAll('.loop-track');
-            const mouseX = e.clientX / window.innerWidth;
-
-            tracks.forEach((track, index) => {
-                const speed = (index + 1) * 20;
-                const x = (mouseX - 0.5) * speed;
-                track.style.transform = `translateX(calc(-50% + ${x}px))`;
-            });
-        });
-    </script>
+    <script src="js/infinite-loop.js"></script>
 </body>
 
 </html>
