@@ -511,27 +511,7 @@
     <script src="js/components/tabs-experience.js"></script>
 
     <!-- animacion suave para secciones-->
-    <script>
-        const fadeInElements = document.querySelectorAll('[class*="fade-in"]');
-
-        const fadeObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    // Agregar con retardo
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 100); // 100ms entre cada uno
-                } else {
-                    //volver a ocultar para reanimar si se vuelve a la sección
-                    entry.target.classList.remove('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        fadeInElements.forEach(el => fadeObserver.observe(el));
-    </script>
+    <script src="js/components/fade-animations.js"></script>
 
     <script>
         const skillsTabs = document.querySelectorAll(".skills-tab-button");
