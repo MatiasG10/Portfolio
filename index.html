@@ -11,12 +11,44 @@
 </head>
 
 <body>
+
     <!-- Sistema de partículas -->
     <div id="particles-container"></div>
 
     <!-- Efectos de brillo de fondo -->
     <div class="glow glow-1"></div>
     <div class="glow glow-2"></div>
+
+    <!--modal estructura-->
+    <div id="project-modal" class="project-modal" style="display: none">
+        <div class="project-modal-dialog">
+            <div class="project-modal-header">
+                <h2 class="modal-title" id="modal-title">Título del Proyecto</h2>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+
+            <div class="project-modal-content">
+                <div class="modal-image-wrapper">
+                    <div class="modal-image-slider" id="modal-image-slider">
+                        <!-- Las imágenes se cargarán dinámicamente aquí -->
+                    </div>
+                </div>
+                <div class="modal-description-wrapper">
+                    <p id="modal-description">Descripción del proyecto</p>
+                </div>
+            </div>
+
+            <div class="container-modal-link">
+                <div class="tech-tags" id="modal-tags">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <a id="modal-link" class="modal-link" href="#" target="_blank">Ir al sitio</a>
+            </div>
+
+        </div>
+    </div>
 
     <!-- HEADER (Barra de navegación) -->
     <header class="header">
@@ -463,119 +495,8 @@
     <script src="js/components/modal-data.js"></script>
     <script src="js/components/renderer.js"></script>
 
-    <!--modal estructura y funcion-->
-    <div id="project-modal" class="project-modal" style="display: none">
-        <div class="project-modal-dialog">
-            <div class="project-modal-header">
-                <h2 class="modal-title" id="modal-title">Título del Proyecto</h2>
-                <button class="modal-close" onclick="closeModal()">×</button>
-            </div>
-
-            <div class="project-modal-content">
-                <div class="modal-image-wrapper">
-                    <div class="modal-image-slider" id="modal-image-slider">
-                        <!-- Las imágenes se cargarán dinámicamente aquí -->
-                    </div>
-                </div>
-                <div class="modal-description-wrapper">
-                    <p id="modal-description">Descripción del proyecto</p>
-                </div>
-            </div>
-
-            <div class="container-modal-link">
-                <div class="tech-tags" id="modal-tags">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">CSS</span>
-                    <span class="tech-tag">JavaScript</span>
-                </div>
-                <a id="modal-link" class="modal-link" href="#" target="_blank">Ir al sitio</a>
-            </div>
-
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener('click', function (e) {
-            const projectCard = e.target.closest('.project-card');
-            if (projectCard) {
-                const projectTitle = projectCard.getAttribute('data-title');
-                const projectData = projectDetails[projectTitle];
-
-                if (projectData) {
-                    openModal(projectData);
-                }
-            }
-        });
-
-        // cerrar modal clickeando fuera
-        document.getElementById('project-modal').addEventListener('click', function (e) {
-            if (e.target === this) { // Solo si clickeas el fondo oscuro
-                closeModal();
-            }
-        });
-
-        //Apertura del modal
-        function openModal(projectData) {
-            document.getElementById('modal-title').textContent = projectData.title;
-            document.getElementById('modal-description').textContent = projectData.description;
-            document.getElementById('modal-link').href = projectData.link;
-
-            const images = Array.isArray(projectData.image) ? projectData.image : [projectData.image];
-            const sliderContainer = document.getElementById('modal-image-slider');
-
-            sliderContainer.innerHTML = '';
-
-            images.forEach((imgSrc, index) => {
-                const img = document.createElement('img');
-                img.src = imgSrc;
-                img.alt = `${projectData.title} - Imagen ${index + 1}`;
-                img.className = 'modal-image';
-                sliderContainer.appendChild(img);
-            });
-
-            const tagsContainer = document.getElementById('modal-tags');
-            tagsContainer.innerHTML = '';
-            projectData.tags.forEach(tag => {
-                const tagElement = document.createElement('span');
-                tagElement.className = 'tech-tag';
-                tagElement.textContent = tag;
-                tagsContainer.appendChild(tagElement);
-            });
-
-            // CAMBIO AQUÍ: Primero mostrar con scale 0
-            const modal = document.getElementById('project-modal');
-            const dialog = modal.querySelector('.project-modal-dialog');
-
-            dialog.style.scale = '0';  // Empezar en 0
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-
-            // Forzar reflow para que el navegador aplique el scale: 0
-            dialog.offsetHeight;
-
-            // Ahora sí aplicar la animación
-            requestAnimationFrame(() => {
-                dialog.style.scale = '1';
-            });
-        }
-
-        // Función closeModal
-        function closeModal() {
-            const modal = document.getElementById('project-modal');
-            const dialog = modal.querySelector('.project-modal-dialog');
-
-            // Iniciar animación de cierre
-            dialog.style.scale = '0';
-
-            // Esperar 300ms (duración de tu transition)
-            setTimeout(() => {
-                modal.style.display = 'none';
-                document.body.style.overflow = '';
-                dialog.style.scale = '1'; // Resetear para próxima apertura
-            }, 300);
-        }
-    </script>
-    <!--modal estructura y funcion FIN-->
+    <!--modal funcion-->
+    <script src="js/components/modal.js"></script>
 
     <!--loop infinito-->
     <script src="js/components/infinite-loop.js"></script>
