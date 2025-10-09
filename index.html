@@ -507,29 +507,14 @@
     <!--blur con scroll-->
     <script src="js/components/blur-scroll.js"></script>
 
-    <!--controlador del tabs en experiencia-->
-    <script src="js/components/tabs-experience.js"></script>
-
     <!-- animacion suave para secciones-->
     <script src="js/components/fade-animations.js"></script>
 
-    <script>
-        const skillsTabs = document.querySelectorAll(".skills-tab-button");
-        const skillsContents = document.querySelectorAll(".skills-tab-content");
+    <!--tabs en experiencia-->
+    <script src="js/components/tabs-experience.js"></script>
 
-        skillsTabs.forEach(button => {
-            button.addEventListener("click", () => {
-                const target = button.dataset.tab;
-
-                skillsTabs.forEach(btn => btn.classList.remove("active"));
-                button.classList.add("active");
-
-                skillsContents.forEach(content => {
-                    content.classList.toggle("active", content.id === `skills-tab-${target}`);
-                });
-            });
-        });
-    </script>
+    <!--tabs-skills-->
+    <script src="js/components/tabs-skills.js"></script>
 
     <!--particulas de fondo-->
     <script>
