@@ -501,34 +501,13 @@
     <!--loop infinito-->
     <script src="js/components/infinite-loop.js"></script>
 
-    <!-- funcionalidad para barra de navegacion-->
+    <!--barra de navegacion-->
     <script src="js/components/navigation.js"></script>
 
-    <!-- funcionalidad para blur con scroll-->
-    <script>
-        const mainAfter = document.createElement('style');
-        document.head.appendChild(mainAfter);
+    <!--blur con scroll-->
+    <script src="js/components/blur-scroll.js"></script>
 
-        window.addEventListener('scroll', () => {
-            const homeSection = document.getElementById('home');
-            const homeBottom = homeSection.offsetTop + homeSection.offsetHeight;
-            const scrollY = window.scrollY;
-
-            let blurAmount = 0;
-
-            if (scrollY > homeBottom - window.innerHeight / 2) {
-                blurAmount = Math.min((scrollY - homeBottom + window.innerHeight / 2) / 100, 8);
-            }
-
-            mainAfter.innerHTML = `
-            main::after {
-                backdrop-filter: blur(${blurAmount}px);
-            }
-        `;
-        });
-    </script>
-
-    <!-- controlador del tabs en experiencia-->
+    <!--controlador del tabs en experiencia-->
     <script>
         const tabButtons = document.querySelectorAll(".tab-button");
         const tabContents = document.querySelectorAll(".tab-content");
