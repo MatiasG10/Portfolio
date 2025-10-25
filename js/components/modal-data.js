@@ -5,7 +5,11 @@
  @copyright © 2025 Pablo Matias Ganne Moreno. Todos los derechos reservados.
  @description Gestión de modales para proyectos con animaciones
  @version 1.0
- @license Uso educativo y demostrativo. Prohibida la reproducción sin autorización.
+ @license Soy creyente de compartir código para que sea mejorado,
+         pero también de una previa charla y reconocimiento.
+         
+         Contáctame y tras aprobación, ¡eres libre de usarlo!
+         Email: gannematias10@gmail.com
 */
 
 const projectDetails = {

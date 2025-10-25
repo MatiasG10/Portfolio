@@ -1,4 +1,16 @@
-// Gestión del modal de proyectos
+
+/* Project Modal Management System
+
+ @author Pablo Matias Ganne Moreno
+ @copyright © 2025 Pablo Matias Ganne Moreno. Todos los derechos reservados.
+ @description Gestión de modales para proyectos con animaciones
+ @version 1.0
+ @license Soy creyente de compartir código para que sea mejorado,
+         pero también de una previa charla y reconocimiento.
+         
+         Contáctame y tras aprobación, ¡eres libre de usarlo!
+         Email: gannematias10@gmail.com
+*/
 
 document.addEventListener('click', function (e) {
     const projectCard = e.target.closest('.project-card');

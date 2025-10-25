@@ -5,7 +5,11 @@
  @copyright © 2025 Pablo Matias Ganne Moreno. Todos los derechos reservados.
  @description Sistema de carrusel infinito con efectos parallax
  @version 1.0
- @license Uso educativo permitido. Contacto requerido para uso comercial.
+ @license Soy creyente de compartir código para que sea mejorado,
+         pero también de una previa charla y reconocimiento.
+         
+         Contáctame y tras aprobación, ¡eres libre de usarlo!
+         Email: gannematias10@gmail.com
 */
 
 class InfiniteLoop {
