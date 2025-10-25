@@ -9,6 +9,28 @@ document.addEventListener('DOMContentLoaded', function () {
         particleCount: 80, // Reducido para mejor rendimiento
         connectionDistance: 150, // Distancia máxima para conexiones
         particleSize: { min: 5, max: 10 }, // Tamaño mínimo y máximo
+        responsive: {
+            breakpoints: {
+                mobile: 768,    // menos de 768px
+                tablet: 1024,   // 768px - 1024px
+                desktop: 1200   // más de 1024px
+            },
+            particleCount: {
+                mobile: 30,     // menos partículas en móviles
+                tablet: 50,     // partículas en tablets
+                desktop: 80     // partículas en desktop
+            },
+            particleSize: {
+                mobile: { min: 3, max: 6 },   // más pequeñas en móviles
+                tablet: { min: 4, max: 8 },   // tamaño medio en tablets
+                desktop: { min: 5, max: 10 }  // tamaño normal en desktop
+            },
+            connectionDistance: {
+                mobile: 100,    // conexiones más cortas en móviles
+                tablet: 120,
+                desktop: 150
+            }
+        },
         colors: {
             particle: '#FF6B00', // Color principal de las partículas
             connectionBase: '255, 107, 0', // Color base para conexiones (RGB)
@@ -46,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
         particleGradient.addColorStop(0, '#FFE066'); // Centro brillante
         particleGradient.addColorStop(0.7, config.colors.particle); // Borde exterior
         particleGradient.addColorStop(1, 'transparent');  // Transparente afuera
-        
+
         return { particleGradient };
     }
 
@@ -58,20 +80,47 @@ document.addEventListener('DOMContentLoaded', function () {
         createParticles();
     }
 
+    // FUNCIÓN PARA OBTENER CONFIGURACIÓN RESPONSIVE
+    function getResponsiveConfig() {
+        const width = window.innerWidth;
+        const responsive = config.responsive;
+
+        if (width < responsive.breakpoints.mobile) {
+            return {
+                particleCount: responsive.particleCount.mobile,
+                particleSize: responsive.particleSize.mobile,
+                connectionDistance: responsive.connectionDistance.mobile
+            };
+        } else if (width < responsive.breakpoints.tablet) {
+            return {
+                particleCount: responsive.particleCount.tablet,
+                particleSize: responsive.particleSize.tablet,
+                connectionDistance: responsive.connectionDistance.tablet
+            };
+        } else {
+            return {
+                particleCount: responsive.particleCount.desktop,
+                particleSize: responsive.particleSize.desktop,
+                connectionDistance: responsive.connectionDistance.desktop
+            };
+        }
+    }
+
     function createParticles() {
         particles = [];
-        for (let i = 0; i < config.particleCount; i++) {
+        const responsiveConfig = getResponsiveConfig(); // ⬅️ Obtener config responsive
+
+        for (let i = 0; i < responsiveConfig.particleCount; i++) { // ⬅️ Usar cantidad responsive
             particles.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                size: Math.random() * (config.particleSize.max - config.particleSize.min) + config.particleSize.min,
+                size: Math.random() * (responsiveConfig.particleSize.max - responsiveConfig.particleSize.min) + responsiveConfig.particleSize.min, // ⬅️ Tamaño responsive
                 speedX: (Math.random() - 0.5) * 2 * config.maxParticleSpeed,
                 speedY: (Math.random() - 0.5) * 2 * config.maxParticleSpeed,
                 originalSize: 0,
                 pulsePhase: Math.random() * Math.PI * 2
             });
         }
-        // Inicializar tamaños originales después de crear las partículas
         particles.forEach(p => p.originalSize = p.size);
     }
 
@@ -83,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const gridX = Math.floor(p.x / config.performance.spatialGridSize);
             const gridY = Math.floor(p.y / config.performance.spatialGridSize);
             const key = `${gridX},${gridY}`;
-            
+
             if (!spatialGrid.has(key)) {
                 spatialGrid.set(key, []);
             }
@@ -96,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const gridX = Math.floor(p.x / config.performance.spatialGridSize);
         const gridY = Math.floor(p.y / config.performance.spatialGridSize);
         const nearby = [];
-        
+
         for (let x = -1; x <= 1; x++) {
             for (let y = -1; y <= 1; y++) {
                 const key = `${gridX + x},${gridY + y}`;
@@ -126,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 p.x = p.size;
                 p.speedX *= -0.8;
             }
-            
+
             if (p.y > canvas.height - p.size) {
                 p.y = canvas.height - p.size;
                 p.speedY *= -0.8;
@@ -139,11 +188,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function drawConnections() {
         updateSpatialGrid();
-        const connectionDistanceSq = config.connectionDistance * config.connectionDistance;
-        
+        const responsiveConfig = getResponsiveConfig(); // ⬅️ Obtener config responsive
+        const connectionDistanceSq = responsiveConfig.connectionDistance * responsiveConfig.connectionDistance; // ⬅️ Distancia responsive
+
         for (let i = 0; i < particles.length; i++) {
             const nearby = getNearbyParticles(i);
-            
+
             for (const j of nearby) {
                 const dx = particles[i].x - particles[j].x;
                 const dy = particles[i].y - particles[j].y;
@@ -152,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (distanceSq < connectionDistanceSq) {
                     const distance = Math.sqrt(distanceSq);
                     const opacity = (1 - (distance / config.connectionDistance)) * config.colors.connectionMaxOpacity;
-                    
+
                     // Línea con gradiente
                     const gradient = ctx.createLinearGradient(
                         particles[i].x, particles[i].y,
@@ -160,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     );
                     gradient.addColorStop(0, `rgba(${config.colors.glowBase}, ${opacity})`);
                     gradient.addColorStop(1, `rgba(${config.colors.connectionBase}, ${opacity})`);
-                    
+
                     ctx.beginPath();
                     ctx.strokeStyle = gradient;
                     ctx.lineWidth = 1.2 * (1 - distance / config.connectionDistance);
@@ -187,13 +237,13 @@ document.addEventListener('DOMContentLoaded', function () {
             // Sombra suave
             ctx.shadowColor = `rgba(${config.colors.glowBase}, 0.6)`;
             ctx.shadowBlur = p.size * 3;
-            
+
             // Partícula con gradiente
             ctx.fillStyle = gradients.particleGradient;
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
             ctx.fill();
-            
+
             // Reset shadow
             ctx.shadowColor = 'transparent';
             ctx.shadowBlur = 0;
@@ -210,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!mouse.isActive || mouse.x === null) return;
 
         const interactionRadiusSq = config.mouse.interactionRadius * config.mouse.interactionRadius;
-        
+
         for (const p of particles) {
             const dx = p.x - mouse.x;
             const dy = p.y - mouse.y;
@@ -220,15 +270,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 const distance = Math.sqrt(distanceSq);
                 const force = (config.mouse.interactionRadius - distance) / config.mouse.interactionRadius;
                 const angle = Math.atan2(dy, dx);
-                
+
                 let strength = mouse.isPressed ? config.mouse.attractionStrength : config.mouse.repulsionStrength;
-                
+
                 const accelerationX = Math.cos(angle) * force * strength;
                 const accelerationY = Math.sin(angle) * force * strength;
-                
+
                 p.x += accelerationX;
                 p.y += accelerationY;
-                
+
                 // Efecto visual al interactuar
                 p.size = p.originalSize * (1 + force * 0.5);
             }
@@ -255,7 +305,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // REGISTRO DE EVENTOS
-    window.addEventListener('resize', setupCanvas);
+    window.addEventListener('resize', function () {
+        setupCanvas(); 
+    });
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseleave', handleMouseLeave);
     window.addEventListener('mousedown', handleMouseDown);
@@ -264,29 +316,29 @@ document.addEventListener('DOMContentLoaded', function () {
     // ANIMACIÓN OPTIMIZADA
     function animate() {
         frameCount++;
-        
+
         if (frameCount % config.performance.frameSkip === 0) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
+
             // Fondo sutil con gradiente
             const bgGradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
             bgGradient.addColorStop(0, 'rgba(10, 10, 20, 0.1)'); // Color inicio fondo
             bgGradient.addColorStop(1, 'rgba(20, 15, 30, 0.1)'); // Color final fondo
             ctx.fillStyle = bgGradient;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
+
             updateParticles();
             applyMouseInteractions();
             drawConnections();
             drawParticles();
         }
-        
+
         requestAnimationFrame(animate);
     }
 
     // INICIALIZACIÓN
     setupCanvas();
     animate();
-    
+
     console.log('✨ Sistema de partículas optimizado y estético cargado');
 });
