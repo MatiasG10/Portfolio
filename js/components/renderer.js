@@ -1,8 +1,18 @@
-//- Sistema de renderizado para experiencias
+/*Experience Renderer System
 
-/**
- * Renderiza un proyecto individual
+ @author Pablo Matias Ganne Moreno
+ @copyright © 2025 Pablo Matias Ganne Moreno. Todos los derechos reservados.
+ @description Sistema de renderizado dinámico para experiencias y proyectos
+ @version 1.0
+ @license Soy creyente de compartir código para que sea mejorado,
+         pero también de una previa charla y reconocimiento.
+         
+         Contáctame y tras aprobación, ¡eres libre de usarlo!
+         Email: gannematias10@gmail.com
  */
+
+
+//Renderiza un proyecto individual
 function renderProject(project) {
   const hasModal = project.hasModal || project.descriptionLong;
 
@@ -29,9 +39,8 @@ function renderProject(project) {
   `;
 }
 
-/**
- * Renderiza la galería de proyectos
- */
+
+//Renderiza la galería de proyectos
 function renderProjectGallery(projects) {
   if (!projects || projects.length === 0) return '';
   
@@ -47,9 +56,8 @@ function renderProjectGallery(projects) {
   `;
 }
 
-/**
- * Renderiza las responsabilidades
- */
+
+//Renderiza las responsabilidades
 function renderResponsibilities(responsibilities) {
   if (!responsibilities || responsibilities.length === 0) return '';
   
@@ -67,9 +75,8 @@ function renderResponsibilities(responsibilities) {
   `;
 }
 
-/**
- * Renderiza un artículo de experiencia completo
- */
+
+//Renderiza un artículo de experiencia completo
 function renderExperienceItem(experience) {
   return `
     <article class="experience-item">
@@ -98,9 +105,8 @@ function renderExperienceItem(experience) {
   `;
 }
 
-/**
- * Renderiza toda una sección (work o extra)
- */
+
+//Renderiza toda una sección (work o extra)
 function renderExperienceSection(experiences, containerId) {
   const container = document.getElementById(containerId);
   if (!container) {
@@ -112,9 +118,8 @@ function renderExperienceSection(experiences, containerId) {
   container.innerHTML = html;
 }
 
-/**
- * Inicializa todo el contenido
- */
+
+//Inicializa todo el contenido
 function initExperience() {
   // Verificar que experienceData existe
   if (typeof experienceData === 'undefined') {

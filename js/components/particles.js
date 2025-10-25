@@ -1,3 +1,18 @@
+
+/*Interactive Particles System
+ 
+@author Pablo Matias Ganne Moreno
+ @copyright © 2025 Pablo Matias Ganne Moreno. Todos los derechos reservados.
+ @description Sistema de partículas interactivas con efectos visuales
+ @version 1.0
+ @license Soy creyente de compartir código para que sea mejorado,
+         pero también de una previa charla y reconocimiento.
+         
+         Contáctame y tras aprobación, ¡eres libre de usarlo!
+         Email: gannematias10@gmail.com
+*/
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const particlesContainer = document.getElementById('particles-container');
     if (!particlesContainer) {
@@ -306,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // REGISTRO DE EVENTOS
     window.addEventListener('resize', function () {
-        setupCanvas(); 
+        setupCanvas();
     });
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseleave', handleMouseLeave);

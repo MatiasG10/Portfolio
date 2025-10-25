@@ -1,4 +1,15 @@
-// Funcionalidad para barra de navegación
+/*Navigation System with Scroll Indicator
+
+ @author Pablo Matias Ganne Moreno
+ @copyright © 2025 Pablo Matias Ganne Moreno. Todos los derechos reservados.
+ @description Sistema de navegación con indicador visual y scroll suave
+ @version 1.0
+ @license Soy creyente de compartir código para que sea mejorado,
+         pero también de una previa charla y reconocimiento.
+         
+         Contáctame y tras aprobación, ¡eres libre de usarlo!
+         Email: gannematias10@gmail.com
+*/
 
 const navLinks = document.querySelectorAll('.navbar-content a');
 const sections = document.querySelectorAll('main section');
