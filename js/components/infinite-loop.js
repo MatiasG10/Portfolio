@@ -1,9 +1,12 @@
-/**
- * infinite-loop.js
- * Módulo para gestionar loops infinitos de herramientas/tecnologías
- * Autor: Pablo Matías Ganne Moreno
- * Fecha: 2025
- */
+
+/*Infinite Loop Carousel System
+
+ @author Pablo Matias Ganne Moreno
+ @copyright © 2025 Pablo Matias Ganne Moreno. Todos los derechos reservados.
+ @description Sistema de carrusel infinito con efectos parallax
+ @version 1.0
+ @license Uso educativo permitido. Contacto requerido para uso comercial.
+*/
 
 class InfiniteLoop {
     /**

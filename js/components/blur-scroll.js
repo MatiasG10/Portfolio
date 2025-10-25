@@ -1,4 +1,11 @@
-// Funcionalidad para blur con scroll
+/*Blur Effect on Scroll
+ 
+ @author Pablo Matias Ganne Moreno
+ @copyright © 2025 Pablo Matias Ganne Moreno. Todos los derechos reservados.
+ @description Aplica efecto de desenfoque progresivo al hacer scroll
+ @version 1.0
+ @license Uso educativo permitido. Contacto requerido para uso comercial.
+*/ 
 
 const mainAfter = document.createElement('style');
 document.head.appendChild(mainAfter);

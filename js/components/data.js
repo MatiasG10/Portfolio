@@ -1,3 +1,13 @@
+
+/*Experience Data Configuration
+ 
+@author Pablo Matias Ganne Moreno
+@copyright © 2025 Pablo Matias Ganne Moreno. Todos los derechos reservados.
+@description Datos estructurados de experiencia laboral y proyectos
+@version 1.0
+@license Uso educativo permitido. Contacto requerido para uso comercial.
+*/
+
 const experienceData = {
   work: [
     {

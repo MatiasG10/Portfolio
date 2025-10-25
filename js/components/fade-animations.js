@@ -1,5 +1,13 @@
 
-// Animación suave para secciones
+
+/* Fade Animations with Intersection Observer
+
+ @author Pablo Matias Ganne Moreno
+ @copyright © 2025 Pablo Matias Ganne Moreno. Todos los derechos reservados.
+ @description Sistema de animaciones suaves al hacer scroll
+ @version 1.0
+ @license Uso educativo permitido. Contacto requerido para uso comercial.
+*/
 
 const fadeInElements = document.querySelectorAll('[class*="fade-in"]');
 

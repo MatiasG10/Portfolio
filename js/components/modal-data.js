@@ -1,3 +1,13 @@
+
+/*Project Modal Management System
+
+ @author Pablo Matias Ganne Moreno
+ @copyright © 2025 Pablo Matias Ganne Moreno. Todos los derechos reservados.
+ @description Gestión de modales para proyectos con animaciones
+ @version 1.0
+ @license Uso educativo y demostrativo. Prohibida la reproducción sin autorización.
+*/
+
 const projectDetails = {
   "3impacto": {
     title: "3impacto",
