@@ -23,23 +23,22 @@ const experienceData = {
       projects: [
         {
           title: "3impacto",
-          description: "Breve descripción del proyecto",
-          descriptionLong: "Trabajé en el Front End de 3impacto, maquetando interfaces con HTML y CSS, dándoles estilos responsive y agregando funcionalidades con JavaScript. Me encargué de que los datos, imágenes e iconos se cargaran correctamente, optimizando el rendimiento y asegurando una buena experiencia de usuario. Participé en el desarrollo del sitio web de [Ejemplo: una tienda online], creando la interfaz desde cero con HTML, CSS y JavaScript. Implementé secciones dinámicas, como un carrusel de productos y un formulario de contacto funcional, además de optimizar imágenes y asegurar que todo cargara rápido.",
+          description: "Sitio web para medir y reportar impacto sostenible.",
           image: "assets/img/3impacto.JPG",
           link: "https://3impacto.eco/",
           hasModal: true
         },
         {
           title: "match4room",
-          description: "Breve descripción del proyecto",
+          description: "Sitio web para gestionar y conectar alquileres.",
           image: "assets/img/match4room.JPG",
           link: "https://match4room.com/",
           hasModal: true
         }
       ],
       responsibilities: [
-        "Desarrollo y mantenimiento de proyectos internos y externos (stack MERN).",
-        "Coordinación con clientes, definición de funcionalidades, liderazgo de tareas.",
+        "Desarrollo y mantenimiento de proyectos internos y externos.",
+        "Definición de funcionalidades y liderazgo de tareas.",
         "Uso de Trello y Jira básico para gestión de proyectos.",
         "Documentación técnica y pruebas de funcionalidades."
       ]
@@ -53,13 +52,13 @@ const experienceData = {
       projects: [
         {
           title: "Tasktugo",
-          description: "Breve descripción del proyecto",
+          description: "Herramienta de gestión de tareas tipo Trello, simple y enfocada.",
           image: "assets/img/TasktugoLogin.JPG",
           link: "https://tasktugo.aptugo.com/"
         },
         {
           title: "Univerzip",
-          description: "Breve descripción del proyecto",
+          description: "Plataforma para conectar estudiantes con alojamientos y servicios universitarios.",
           image: "assets/img/Univerzip.JPG",
           link: "https://univerzip.aptugo.app/"
         }
@@ -84,7 +83,7 @@ const experienceData = {
       projects: [
         {
           title: "devcitos",
-          description: "Proyecto para pasar a desarrollador",
+          description: "Proyecto de aprendizaje para transición a rol de Front-End.",
           image: "assets/img/Devcitos.JPG",
           link: "https://devcitos.aptugo.app/"
         }
@@ -104,7 +103,7 @@ const experienceData = {
       projects: [
         {
           title: "Portfolio",
-          description: "Breve descripción del proyecto",
+          description: "Portfolio inicial para mostrar trabajos usando HTML y CSS.",
           image: "assets/img/miPrimerPort.JPG",
           link: "https://portafoliomatyg.aptugo.app/"
         }
@@ -124,7 +123,7 @@ const experienceData = {
       projects: [
         {
           title: "blog cyberpunk",
-          description: "Entrega de proyecto para graduarse en aptugo",
+          description: "Proyecto final de Aptugo: blog temático cyberpunk.",
           image: "assets/img/proyectoCyberpunk.JPG",
           link: "https://cyberpunk.aptugo.app/"
         }
@@ -146,7 +145,7 @@ const experienceData = {
       projects: [
         {
           title: "Catamarket",
-          description: "Proyecto interdisciplinario con enfoque en eficiencia hídrica.",
+          description: "Marketplace de práctica universitario, centrado en diseño y UX.",
           image: "assets/img/catamarket.JPG",
           link: "https://catamarket-original.netlify.app/"
         }
@@ -162,7 +161,7 @@ const experienceData = {
       projects: [
         {
           title: "Tutorias UNCA",
-          description: "Proyecto interdisciplinario con enfoque en eficiencia hídrica.",
+          description: "Proyecto de tutorías UNCA para organizar información académica y trámites.",
           image: "assets/img/tutoriasUNCA.JPG",
           link: "https://uncatutorias.aptugo.app/"
         }
@@ -173,14 +172,14 @@ const experienceData = {
       id: 3,
       title: "Proyectos de Facultad",
       period: { start: "2021", end: "2023" },
-      company: "Universidad Nacional de Catamarca",
+      company: "Nodo Tecnológico Catamarca",
       description: "Durante mis estudios participé en diversos proyectos académicos interdisciplinarios, varios de los cuales fueron premiados a nivel provincial.",
       projects: [
         {
-          title: "Sistema de Riego Automatizado",
-          description: "Proyecto interdisciplinario con enfoque en eficiencia hídrica.",
+          title: "Miauseline",
+          description: "Proyecto final del módulo de Fullstack: página web de postres con enfoque UX/UI.",
           image: "assets/img/Image-primary.jpg",
-          link: "#"
+          link: "https://miausseleine.netlify.app/"
         }
       ],
       responsibilities: []
