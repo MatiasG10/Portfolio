@@ -24,14 +24,14 @@ const experienceData = {
         {
           title: "3impacto",
           description: "Sitio web para medir y reportar impacto sostenible.",
-          image: "assets/img/3impacto.JPG",
+          image: "assets/img/3impactoMkp.avif",
           link: "https://3impacto.eco/",
           hasModal: true
         },
         {
           title: "match4room",
           description: "Sitio web para gestionar y conectar alquileres.",
-          image: "assets/img/match4room.JPG",
+          image: "assets/img/M4RMKP1.JPG",
           link: "https://match4room.com/",
           hasModal: true
         }
@@ -48,18 +48,18 @@ const experienceData = {
       title: "Desarrollador Front-End Aptugo",
       period: { start: "2023", end: "2024" },
       company: "Aptugo Agency",
-      description: "Durante mis primeros proyectos reales en Aptugo, participé activamente en tareas de maquetación y aplicación de estilos utilizando la herramienta propia de la empresa. Contribuí en la construcción de interfaces cuidando los detalles visuales y funcionales, asegurándome de respetar los lineamientos de diseño establecidos. Me encargué de cargar correctamente la información necesaria en cada proyecto —como textos, íconos e imágenes— y realicé pruebas en versiones desktop y mobile para garantizar una experiencia fluida en distintos dispositivos.",
+      description: "Durante mis primeros proyectos reales en Aptugo, participé activamente en tareas de maquetación y aplicación de estilos utilizando la herramienta propia de la empresa. Contribuí en la construcción de interfaces cuidando los detalles visuales y funcionales, asegurándome de respetar los lineamientos de diseño establecidos. Me encargué de cargar correctamente la información necesaria en cada proyecto como textos, íconos e imágenes y realicé pruebas en versiones desktop y mobile para garantizar una experiencia fluida en distintos dispositivos.",
       projects: [
         {
           title: "Tasktugo",
           description: "Herramienta de gestión de tareas tipo Trello, simple y enfocada.",
-          image: "assets/img/TasktugoLogin.JPG",
+          image: "assets/img/TasktugoMKP.jpg",
           link: "https://tasktugo.aptugo.com/"
         },
         {
           title: "Univerzip",
           description: "Plataforma para conectar estudiantes con alojamientos y servicios universitarios.",
-          image: "assets/img/Univerzip.JPG",
+          image: "assets/img/univerzipMKP.jpg",
           link: "https://univerzip.aptugo.app/"
         }
       ],
@@ -84,7 +84,7 @@ const experienceData = {
         {
           title: "devcitos",
           description: "Proyecto de aprendizaje para transición a rol de Front-End.",
-          image: "assets/img/Devcitos.JPG",
+          image: "assets/img/devcitosMKP.jpg",
           link: "https://devcitos.aptugo.app/"
         }
       ],
@@ -104,7 +104,7 @@ const experienceData = {
         {
           title: "Portfolio",
           description: "Portfolio inicial para mostrar trabajos usando HTML y CSS.",
-          image: "assets/img/miPrimerPort.JPG",
+          image: "assets/img/portfoliMKP.jpg",
           link: "https://portafoliomatyg.aptugo.app/"
         }
       ],
@@ -124,7 +124,7 @@ const experienceData = {
         {
           title: "blog cyberpunk",
           description: "Proyecto final de Aptugo: blog temático cyberpunk.",
-          image: "assets/img/proyectoCyberpunk.JPG",
+          image: "assets/img/cyberpunkMKP.JPG",
           link: "https://cyberpunk.aptugo.app/"
         }
       ],
@@ -138,51 +138,52 @@ const experienceData = {
   extra: [
     {
       id: 1,
-      title: "Catamarket",
-      period: { start: "06/2025", end: "06/2025" },
-      company: "Universidad Nacional de Catamarca",
-      description: "Durante mis estudios participé en diversos proyectos académicos interdisciplinarios, varios de los cuales fueron premiados a nivel provincial.",
+      title: "Diseño web NODO Modulo N°1",
+      period: { start: "04/2025", end: "09/2025" },
+      company: "Nodo Tecnológico Catamarca",
+      description: "Proyecto final del primer módulo de la Diplomatura en Desarrollo Web Fullstack, desarrollando una página de postres con HTML, CSS y Tailwind, aplicando buenas prácticas de UX/UI, accesibilidad y desarrollo web profesional.",
       projects: [
         {
-          title: "Catamarket",
-          description: "Marketplace de práctica universitario, centrado en diseño y UX.",
-          image: "assets/img/catamarket.JPG",
-          link: "https://catamarket-original.netlify.app/"
+          title: "Miauseline",
+          description: "Proyecto final del módulo de Fullstack: página web de postres con enfoque UX/UI.",
+          image: "assets/img/miausseleineMKP.jpg",
+          link: "https://miausseleine.netlify.app/"
         }
       ],
       responsibilities: []
     },
     {
       id: 2,
-      title: "Proyectos de Facultad",
-      period: { start: "2021", end: "2023" },
+      title: "Catamarket",
+      period: { start: "03/2025", end: "06/2025" },
       company: "Universidad Nacional de Catamarca",
-      description: "Durante mis estudios participé en diversos proyectos académicos interdisciplinarios, varios de los cuales fueron premiados a nivel provincial.",
+      description: "Proyectos académicos interdisciplinarios desarrollados durante mis estudios en la Universidad Nacional de Catamarca, enfocados en diseño, desarrollo web y experiencia de usuario.",
       projects: [
         {
-          title: "Tutorias UNCA",
-          description: "Proyecto de tutorías UNCA para organizar información académica y trámites.",
-          image: "assets/img/tutoriasUNCA.JPG",
-          link: "https://uncatutorias.aptugo.app/"
+          title: "Catamarket",
+          description: "Marketplace de práctica universitario, centrado en diseño y UX.",
+          image: "assets/img/catamarketMKP.jpg",
+          link: "https://catamarket-original.netlify.app/"
         }
       ],
       responsibilities: []
     },
     {
       id: 3,
-      title: "Proyectos de Facultad",
-      period: { start: "2021", end: "2023" },
-      company: "Nodo Tecnológico Catamarca",
-      description: "Durante mis estudios participé en diversos proyectos académicos interdisciplinarios, varios de los cuales fueron premiados a nivel provincial.",
+      title: "Tutorias UNCA",
+      period: { start: "03/2024", end: "06/2024" },
+      company: "Universidad Nacional de Catamarca",
+      description: "Proyecto desarrollado para la UNCA con el objetivo de centralizar toda la información académica y de tutorías para estudiantes, gestionando contenidos, materias, profesores y recursos educativos, combinando desarrollo web y coordinación de equipo.",
       projects: [
         {
-          title: "Miauseline",
-          description: "Proyecto final del módulo de Fullstack: página web de postres con enfoque UX/UI.",
-          image: "assets/img/Image-primary.jpg",
-          link: "https://miausseleine.netlify.app/"
+          title: "Tutorias UNCA",
+          description: "Proyecto de tutorías UNCA para organizar información académica y trámites.",
+          image: "assets/img/tutoriasMKP.jpg",
+          link: "https://uncatutorias.aptugo.app/"
         }
       ],
       responsibilities: []
-    }
+    },
+    
   ]
 };
